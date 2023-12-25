@@ -7,7 +7,7 @@ OBJ = ./src/*.c
 
 all: clean fs
 	
-fs: main.c OBJ
+fs: main.c $(OBJ)
 	mkdir -p bin
 	$(CC) $(CFLAGS) main.c -o bin/main $(OBJ)
 
