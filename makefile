@@ -18,7 +18,8 @@ clean:
 	rm -rf bin
 
 test: test_clean $(OBJ)
-	$(CC) $(CFLAGS) $(OBJ) -o bin/test
+	mkdir -p bin
+	$(CC) $(CFLAGS) $(OBJ) test/test.c -o bin/test
 	./bin/test
 
 test_clean:
