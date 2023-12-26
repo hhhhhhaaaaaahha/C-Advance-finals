@@ -16,3 +16,10 @@ run: fs
 
 clean:
 	rm -rf bin
+
+test: test_clean $(OBJ)
+	$(CC) $(CFLAGS) $(OBJ) -o bin/test
+	./bin/test
+
+test_clean:
+	rm -rf bin/test
