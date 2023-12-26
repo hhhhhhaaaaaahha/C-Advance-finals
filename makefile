@@ -16,3 +16,11 @@ run: fs
 
 clean:
 	rm -rf bin
+
+test: test_clean $(OBJ)
+	mkdir -p bin
+	$(CC) $(CFLAGS) $(OBJ) test/test.c -o bin/test
+	./bin/test
+
+test_clean:
+	rm -rf bin/test
