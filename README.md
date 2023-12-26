@@ -14,3 +14,7 @@
     - put the local file into the in-memory filesystem.
 - function : rmdir 
     - recursivly del the node under specific node.
+
+# How to test
+- We use google test suite to do the unit test
+- use command `make run_test` will compile the whole project and run the test program
