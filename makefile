@@ -1,11 +1,15 @@
-.PHONY: clean
+.PHONY: clean dir
 
 CC = gcc
+CPP = g++
+CPP_FLAGS = -std=c++11 -Wfatal-errors -Wall
 CFLAGS = -Wfatal-errors -Wall -g
-
+TEST = test/*.h
 OBJ = ./src/*.c
 
 all: clean fs
+
+test_all: clean test run_test
 	
 fs: main.c $(OBJ)
 	mkdir -p bin
@@ -17,10 +21,11 @@ run: fs
 clean:
 	rm -rf bin
 
-test: test_clean $(OBJ)
-	mkdir -p bin
-	$(CC) $(CFLAGS) $(OBJ) test/test.c -o bin/test
-	./bin/test
+test: clean dir $(OBJ) $(TEST)
+	g++ $(CPP_FLAGS) $(OBJ) test/test.cpp -o bin/test -lgtest -lpthread
 
-test_clean:
-	rm -rf bin/test
+dir:
+	mkdir -p bin
+
+run_test: test
+	./bin/test
