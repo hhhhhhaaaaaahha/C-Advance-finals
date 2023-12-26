@@ -1,4 +1,4 @@
-#include "src/inode.h"
+#include "include/inode.h"
 
 int main()
 {

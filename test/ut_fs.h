@@ -1,6 +1,6 @@
 #include <gtest/gtest.h>
 
-#include "../src/fs.h"
+#include "../include/fs.h"
 
 TEST(FileSystemSuite, initialize)
 {

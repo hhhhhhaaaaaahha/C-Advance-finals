@@ -1,6 +1,6 @@
 #include <stdio.h>
 
-#include "inode.h"
+#include "../include/inode.h"
 
 void helloWorld()
 {
