@@ -1,5 +1,5 @@
 #pragma once
-#include "inode.h"
+#include "metadata.h"
 #include <stdio.h>
 
 typedef struct {

@@ -1,5 +1,5 @@
 #include "../include/put.h"
-#include "../include/inode.h"
+#include "../include/metadata.h"
 
 
 TEST(PutSuite, CheckOpenedNodeTypeFile)
