@@ -5,11 +5,14 @@
 
 typedef enum file_type
 {
-    file,
-    directory,
+    // suggest using a different name for this enum
+    // since it may conflict with some varible names.
+    TYPE_FILE, // uppercase
+    TYPE_DIR,  // uppercase
 } file_type;
 
-typedef struct metadata
+
+typedef struct metadata // should filetype be in here?
 {
     int file_size;
     int *blocks;

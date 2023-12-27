@@ -2,6 +2,7 @@
 
 #include "ut_fs.h"
 #include "ut_get.h"
+#include "ut_put.h"
 
 int main(int argc, char **argv)
 {
