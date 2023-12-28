@@ -3,6 +3,8 @@
 
 #include <stdlib.h>
 
+#include "metadata.h"
+
 #define BLOCK_SIZE 4096
 
 typedef struct node node;
@@ -19,13 +21,16 @@ typedef struct file_system
     int num_used_inodes;
 
     int *data_bitmap;
+    int num_total_blocks;
+    int num_used_blocks;
 
 } file_system;
 
-file_system *initFileSystem(int mode);
+file_system *initFileSystem(int mode, long long partition_size);
 int allocateInode(file_system *fs);
+int allocateDataBlock(file_system *fs);
 void reclaimInode(file_system *fs, int inum);
-void createFile(file_system *fs);
-void deleteFile(file_system *fs);
+node *createFile(file_system *fs, node *parent, const char *name, file_type node_type);
+void deleteFile(file_system *fs, node *target);
 
 #endif

@@ -19,7 +19,13 @@ int main()
             printf("Option error!\n\n");
         }
     }
-    file_system *fs = initFileSystem(mode);
+    if (mode == 2)
+    {
+        long long partition_size;
+        printf("Input size of a new partition (e.g. 102400): ");
+        scanf("%lld", partition_size);
+        file_system *fs = initFileSystem(mode, partition_size);
+    }
 
     return 0;
 }
