@@ -20,4 +20,7 @@ typedef struct {
 int open_file(const char * path, Temp_Inode * inode);
 int open_file(const char * path, node * inode);
 node * put_file(file_system *fs, const char *path);
+node * put_folder(file_system *fs, const char *path);
 int read_file_buffer(Temp_Inode * inode, FILE * file, int size);
+
+int check_node_size(const char * path);

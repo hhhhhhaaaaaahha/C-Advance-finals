@@ -44,7 +44,7 @@ int initMetadata(file_system *fs, node *new_node, file_type node_type, int file_
     if (node_type == TYPE_DIR)
     {
         new_node->fp = NULL;
-        info->file_size = FAKE_DIR_SIZE;
+        info->file_size = file_size;
     }
     else if (node_type == TYPE_FILE)
     {

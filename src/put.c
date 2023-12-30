@@ -62,6 +62,24 @@ int open_file(const char *path, node *inode)
     return size;
 }
 
+int check_node_size(const char * path){
+    struct stat statbuf = {0};
+    stat(path, &statbuf);
+    if (S_ISDIR(statbuf.st_mode))
+    {
+        return statbuf.st_size;
+    }
+    else if (S_ISREG(statbuf.st_mode))
+    {
+        return statbuf.st_size;
+    }
+    else
+    {
+        return -1; // not a file or directory
+    }
+
+}
+
 node *put_file(file_system *fs, const char *path)
 {
     // init the inode
@@ -72,14 +90,33 @@ node *put_file(file_system *fs, const char *path)
         return NULL; // wrong name
     inode = initNode(fs, fs->current_directory, name, TYPE_FILE);
     // open the file pointer
-    int file_size = open_file(path, inode);
-    if (file_size == -1)
+    int ret = open_file(path, inode);
+    if (ret == -1)
     {
         printf("open file error\n");
         return NULL;
     }
     // init the metadata
-    int ret = initMetadata(fs, inode, TYPE_FILE, file_size);
+    ret = initMetadata(fs, inode, TYPE_FILE, check_node_size(path));
+    if (ret == -1)
+    {
+        printf("init metadata error\n");
+        return NULL;
+    }
+    return inode;
+}
+
+node * put_folder(file_system *fs, const char *path)
+{
+    // init the inode
+    node *inode = NULL;
+    const char *name = strrchr(path, '/');
+    name ++;
+    if (name == NULL)
+        return NULL; // wrong name
+    inode = initNode(fs, fs->current_directory, name, TYPE_DIR);
+    // init the metadata
+    int ret = initMetadata(fs, inode, TYPE_DIR, check_node_size(path));
     if (ret == -1)
     {
         printf("init metadata error\n");

@@ -56,3 +56,18 @@ TEST(PutSuite, RealInodeTestFileSize)
     free(fs);
 }
 
+TEST(PutSuite, RealInodeTestFolderSize)
+{
+    std::string path_to_folder = "./test/test_resources/test_folder";
+    file_system *fs = initFileSystem(2, 2048000);
+    node *test_node = put_folder(fs, path_to_folder.c_str());
+
+    ASSERT_EQ(test_node, fs->root->left_most_child);
+    ASSERT_EQ(96, test_node->file_info->file_size); //  96 Byte
+    ASSERT_EQ(std::string(test_node->name), "test_folder");
+
+    // TODO: free flie_system memory space
+    // freeFileSystem(fs);
+    free(test_node);
+    free(fs);
+}
