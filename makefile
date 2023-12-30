@@ -1,9 +1,11 @@
 .PHONY: clean dir
 
+
+INCLUDE = -Iinclude
 CC = gcc
 CXX = g++
-CFLAGS = -Wfatal-errors -Wall -g
-CPP_FLAGS = -std=c++11 -Wfatal-errors -Wall
+CFLAGS = -Wfatal-errors -Wall -g $(INCLUDE)
+CPP_FLAGS = -std=c++11 -Wfatal-errors -Wall $(INCLUDE)
 
 TEST = test/*.h
 OBJ = src/*.c

@@ -1,5 +1,7 @@
 #pragma once
 #include "metadata.h"
+#include "node.h"
+#include "fs.h"
 #include <stdio.h>
 
 typedef struct {
@@ -16,4 +18,6 @@ typedef struct {
 } Temp_Inode;
 
 int open_file(const char * path, Temp_Inode * inode);
+int open_file(const char * path, node * inode);
+node * put_file(file_system *fs, const char *path);
 int read_file_buffer(Temp_Inode * inode, FILE * file, int size);
