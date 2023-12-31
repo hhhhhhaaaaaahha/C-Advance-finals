@@ -18,3 +18,5 @@
 # How to test
 - We use google test suite to do the unit test
 - use command `make run_test` will compile the whole project and run the test program
+
+- [Mia](https://github.com/MiaHsieh9003)
