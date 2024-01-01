@@ -3,7 +3,7 @@
 #include <string.h>
 #include <stdlib.h>
 
-int open_file(const char *path, Temp_Inode *inode)
+int open_file_for_test(const char *path, Temp_Inode *inode)
 {
     // initialize the inode
     inode->metadata = (metadata_temp *)malloc(sizeof(metadata_temp));

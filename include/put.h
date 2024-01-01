@@ -17,7 +17,7 @@ typedef struct {
     char * content;
 } Temp_Inode;
 
-int open_file(const char * path, Temp_Inode * inode);
+int open_file_for_test(const char * path, Temp_Inode * inode);
 int open_file(const char * path, node * inode);
 node * put_file(file_system *fs, const char *path);
 node * put_folder(file_system *fs, const char *path);
