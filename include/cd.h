@@ -5,6 +5,7 @@
 #include <string.h>
 #include <stdio.h>
 
+
 void cd(char *dir);
 void backToRoot();
 void prevDirectory();

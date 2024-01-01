@@ -98,5 +98,22 @@ node *find_file_inline(file_system *fs, node *target, const char *file_name)
 node *find_file(file_system *fs, const char *file_name)
 {
     node *it = fs->current_directory->left_most_child;
-    return find_file_inline(fs, it, file_name);
+    node *ret = NULL;
+    while (it != NULL)
+    {
+        if (it->file_info->node_type == TYPE_DIR)
+        {
+            ret = find_file_inline(fs, it, file_name);
+            if (ret != NULL)
+            {
+                return ret;
+            }
+        }
+        else if (strcmp(it->name, file_name) == 0 && it->file_info->node_type == TYPE_FILE)
+        {
+            return it;
+        }
+        it = it->sibling;
+    }
+    return NULL;
 }

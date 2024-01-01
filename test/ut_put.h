@@ -1,6 +1,17 @@
+#include <gtest/gtest.h>
 #include "put.h"
 #include "metadata.h"
 #include "node.h"
+#include "rmdir.h"
+
+TEST(PutSuite, FindFileWhoUsedPuts){
+    std::string path_to_file = "./test/test_resources/test_file.txt";
+    std::string file_name = "test_file.txt";
+    file_system *fs = initFileSystem(2, 2048000);
+    node *test_node = put_file(fs, path_to_file.c_str());
+    ASSERT_EQ(test_node, fs->current_directory->left_most_child);
+    ASSERT_EQ(test_node, find_file(fs, file_name.c_str()));
+}
 
 TEST(PutSuite, CheckOpenedNodeTypeFile)
 {
@@ -50,24 +61,28 @@ TEST(PutSuite, RealInodeTestFileSize)
     ASSERT_EQ(27, test_node->file_info->file_size);
     ASSERT_EQ(std::string(test_node->name), "test_file.txt");
 
-    // TODO: free flie_system memory space
+    // TODO: free file_system memory space
     // freeFileSystem(fs);
     free(test_node);
     free(fs);
 }
 
-TEST(PutSuite, RealInodeTestFolderSize)
+
+TEST(PutSuite, RealInodeTestFileName)
 {
-    std::string path_to_folder = "./test/test_resources/test_folder";
+    std::string path_to_file = "./test/test_resources/test_file.txt";
+    std::string file_name = "test_file.txt";
     file_system *fs = initFileSystem(2, 2048000);
-    node *test_node = put_folder(fs, path_to_folder.c_str());
+    node *test_node = put_file(fs, path_to_file.c_str());
 
     ASSERT_EQ(test_node, fs->root->left_most_child);
-    ASSERT_EQ(96, test_node->file_info->file_size); //  96 Byte
-    ASSERT_EQ(std::string(test_node->name), "test_folder");
+    ASSERT_EQ(std::string(test_node->name), file_name);
 
-    // TODO: free flie_system memory space
+    test_node = fs->current_directory->left_most_child;
+    ASSERT_EQ(file_name, std::string(test_node->name));
+    // TODO: free file_system memory space
     // freeFileSystem(fs);
     free(test_node);
     free(fs);
 }
+

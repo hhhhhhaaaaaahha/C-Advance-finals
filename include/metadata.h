@@ -30,7 +30,6 @@ typedef struct metadata
 } metadata;
 
 void initMetadata(file_system *fs, node *new_node, file_type node_type);
-int initMetadata_with_size(file_system *fs, node *new_node, file_type node_type, int file_size);
 
 
 #endif
