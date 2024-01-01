@@ -14,13 +14,14 @@ typedef enum file_type file_type;
 typedef struct node
 {
     char name[50];
+    // what is this? inode number?
     int inode;
 
     node *parent;
     node *left_most_child;
     node *sibling;
 
-    FILE *fp;
+    FILE *fp; // remember to close this
 
     metadata *file_info;
 } node;

@@ -32,5 +32,7 @@ int allocateDataBlock(file_system *fs);
 void reclaimInode(file_system *fs, int inum);
 node *createFile(file_system *fs, node *parent, const char *name, file_type node_type);
 void deleteFile(file_system *fs, node *target);
+// TODO: implement this
+void freeFileSystem(file_system *fs);
 
 #endif

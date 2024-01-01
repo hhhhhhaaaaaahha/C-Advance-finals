@@ -1,4 +1,4 @@
-#include "../include/get.h"
+#include "get.h"
 
 TEST(GetSuite, CreateDumpFolder)
 {

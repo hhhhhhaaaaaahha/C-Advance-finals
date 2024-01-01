@@ -18,7 +18,7 @@ typedef enum file_type
 typedef struct int_node
 {
     int data;
-    int_node *next;
+    struct int_node *next;
 } int_node;
 
 typedef struct metadata
@@ -30,5 +30,7 @@ typedef struct metadata
 } metadata;
 
 void initMetadata(file_system *fs, node *new_node, file_type node_type);
+int initMetadata(file_system *fs, node *new_node, file_type node_type, int file_size);
+
 
 #endif

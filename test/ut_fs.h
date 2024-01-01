@@ -2,8 +2,8 @@
 #include <string>
 #include <sstream>
 
-#include "../include/fs.h"
-#include "../include/node.h"
+#include "fs.h"
+#include "node.h"
 
 TEST(FileSystemSuite, CreateNewFileSystem)
 {
