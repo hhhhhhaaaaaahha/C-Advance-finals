@@ -9,6 +9,7 @@ TEST(CdSuite, cdDirectory){
     ASSERT_STREQ("./test/test_resources/test_folder $ ",currentStatus());
 }
 
+//輸入不完整路徑進入directory
 TEST(CdSuite, cdNextDirectory){
     char  path_to_folder[100] = "./test/test_resources";  
     char inSide_folder[50] = "test_folder";  
