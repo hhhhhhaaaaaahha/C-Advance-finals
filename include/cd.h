@@ -7,3 +7,6 @@
 
 void cdFolder(node *node);
 char * currentStatus();
+void prevDirectory();
+void backToRoot();
+

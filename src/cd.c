@@ -1,4 +1,8 @@
 #include "../include/cd.h"
+#include "node.h"
+#include "put.h"
+#include <stdio.h>
+#include <stdlib.h>
 
 char current[200] = "/ $ ";
 char *currentParent;
@@ -18,7 +22,8 @@ void removeSubstring(char *str, const char *sub) {
 //cd主要判斷程式
 void cd(char *dir)
 {
-    Temp_Inode *inode = (Temp_Inode *)malloc(sizeof(Temp_Inode));
+    // Temp_Inode *inode = (Temp_Inode *)malloc(sizeof(Temp_Inode)); // remember to compile before you commit
+    node * inode = (node *)malloc(sizeof(node));
     // 若輸入cd ..
     if (strcmp(dir, "..") == 0)
     {
