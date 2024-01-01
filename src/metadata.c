@@ -37,7 +37,7 @@ void initMetadata(file_system *fs, node *new_node, file_type node_type)
     new_node->file_info = info;
 }
 
-int initMetadata(file_system *fs, node *new_node, file_type node_type, int file_size)
+int initMetadata_with_size(file_system *fs, node *new_node, file_type node_type, int file_size)
 {
     metadata *info = (metadata *)malloc(sizeof(metadata));
     info->node_type = node_type;

@@ -3,6 +3,7 @@
 #include "ut_fs.h"
 #include "ut_get.h"
 #include "ut_put.h"
+#include "ut_rmdir.h"
 
 int main(int argc, char **argv)
 {

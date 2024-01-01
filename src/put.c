@@ -3,7 +3,7 @@
 #include <string.h>
 #include <stdlib.h>
 
-int open_file(const char *path, Temp_Inode *inode)
+int open_file_for_test(const char *path, Temp_Inode *inode)
 {
     // initialize the inode
     inode->metadata = (metadata_temp *)malloc(sizeof(metadata_temp));
@@ -97,7 +97,7 @@ node *put_file(file_system *fs, const char *path)
         return NULL;
     }
     // init the metadata
-    ret = initMetadata(fs, inode, TYPE_FILE, check_node_size(path));
+    ret = initMetadata_with_size(fs, inode, TYPE_FILE, check_node_size(path));
     if (ret == -1)
     {
         printf("init metadata error\n");
@@ -116,7 +116,7 @@ node * put_folder(file_system *fs, const char *path)
         return NULL; // wrong name
     inode = initNode(fs, fs->current_directory, name, TYPE_DIR);
     // init the metadata
-    int ret = initMetadata(fs, inode, TYPE_DIR, check_node_size(path));
+    int ret = initMetadata_with_size(fs, inode, TYPE_DIR, check_node_size(path));
     if (ret == -1)
     {
         printf("init metadata error\n");
