@@ -58,7 +58,7 @@ int open_file(const char *path, node *inode)
     fseek(file, 0L, SEEK_END);
     size = ftell(file);
     fseek(file, 0L, SEEK_SET);
-    inode->fp = file;
+    inode->fp = file; // link the file pointer to the inode
     return size;
 }
 
@@ -88,7 +88,7 @@ node *put_file(file_system *fs, const char *path)
     name ++;
     if (name == NULL)
         return NULL; // wrong name
-    inode = initNode(fs, fs->current_directory, name, TYPE_FILE);
+    inode = createFile(fs, fs->current_directory, name, TYPE_FILE);
     // open the file pointer
     int ret = open_file(path, inode);
     if (ret == -1)
@@ -96,34 +96,12 @@ node *put_file(file_system *fs, const char *path)
         printf("open file error\n");
         return NULL;
     }
-    // init the metadata
-    ret = initMetadata_with_size(fs, inode, TYPE_FILE, check_node_size(path));
-    if (ret == -1)
-    {
-        printf("init metadata error\n");
-        return NULL;
-    }
+    // init the size
+    inode->file_info->file_size = check_node_size(path);
     return inode;
 }
 
-node * put_folder(file_system *fs, const char *path)
-{
-    // init the inode
-    node *inode = NULL;
-    const char *name = strrchr(path, '/');
-    name ++;
-    if (name == NULL)
-        return NULL; // wrong name
-    inode = initNode(fs, fs->current_directory, name, TYPE_DIR);
-    // init the metadata
-    int ret = initMetadata_with_size(fs, inode, TYPE_DIR, check_node_size(path));
-    if (ret == -1)
-    {
-        printf("init metadata error\n");
-        return NULL;
-    }
-    return inode;
-}
+
 
 int read_file_buffer(Temp_Inode *inode, FILE *file, int size)
 {
