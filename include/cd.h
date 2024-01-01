@@ -5,8 +5,8 @@
 #include <string.h>
 #include <stdio.h>
 
-void cdFolder(node *node);
-char * currentStatus();
-void prevDirectory();
-void backToRoot();
 
+void cd(char *dir);
+void backToRoot();
+void prevDirectory();
+char *currentStatus();
