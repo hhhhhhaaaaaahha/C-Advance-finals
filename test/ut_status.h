@@ -23,3 +23,25 @@
 
 //     ASSERT_EQ(output, expected_output);
 // }
+
+TEST(StatusSuite, PrintStatus)
+{
+    file_system *fs = initFileSystem(2, 2048000);
+    // Capture the output printed to stdout
+    testing::internal::CaptureStdout();
+    print_status(fs, fs->root);
+    std::string output = testing::internal::GetCapturedStdout();
+
+    // Construct the expected output string based on the known values of your file system
+    std::string expected_output = "\n"
+                                  "particion size: 2048000\n"
+                                  "total inodes: 500\n"
+                                  "used inodes: 1\n"
+                                  "total blocks: 500\n"
+                                  "used blocks: 1\n"
+                                  "files' block: 0\n"
+                                  "block size: 4096\n"
+                                  "free space: 2043904\n";
+
+    ASSERT_EQ(output, expected_output);
+}
