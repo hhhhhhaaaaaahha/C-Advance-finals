@@ -26,8 +26,8 @@ TEST(GetSuite, GetMultiFileFromSystem)
     std::string file1_name = "test_file.txt";
     std::string file2_name = "dummy.txt";
     file_system *fs = initFileSystem(2, 2048000);
-    node *test_node = put_file(fs, path_to_file1.c_str());
-    test_node = put_file(fs, path_to_file2.c_str());
+    put_file(fs, path_to_file1.c_str());
+    put_file(fs, path_to_file2.c_str());
     ASSERT_EQ(0, get_file(fs, file1_name.c_str()));
     ASSERT_EQ(0, get_file(fs, file2_name.c_str()));
 }
