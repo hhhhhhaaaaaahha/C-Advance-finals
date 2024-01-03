@@ -5,6 +5,9 @@
 char allFileFolderList[500];
 
 char* lsPrint(node *dir){
+    // clean the allFileFolderList
+    memset(allFileFolderList, 0, sizeof(allFileFolderList));
+
     if(dir && dir->left_most_child){
         node *it = dir->left_most_child;
         while (it)
