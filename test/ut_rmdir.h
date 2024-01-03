@@ -5,11 +5,32 @@
 #include "ls.h"
 #include <string>
 
+TEST(RmdirSuite, WeirdFileDeleteProblem){
+    file_system *fs = initFileSystem(2, 2048000);
+    node *folder1 = createFile(fs, fs->current_directory, std::string("folder1").c_str(), TYPE_DIR);
+    node *folder2 = createFile(fs, fs->current_directory, std::string("folder2").c_str(), TYPE_DIR);
+    ASSERT_STREQ("folder1\nfolder2\n",lsPrint(fs->current_directory));
+    node *file1 = createFile(fs, folder1, std::string("file1").c_str(), TYPE_FILE);
+    node *file2 = createFile(fs, folder1, std::string("file2").c_str(), TYPE_FILE);
+    node *file3 = createFile(fs, folder2, std::string("file3").c_str(), TYPE_FILE);
+    node *file4 = createFile(fs, folder2, std::string("file4").c_str(), TYPE_FILE);
+    ASSERT_STREQ("file1\nfile2\n",lsPrint(folder1));
+    ASSERT_STREQ("file3\nfile4\n",lsPrint(folder2));
+    rm_dir(fs, std::string("folder1").c_str());
+    ASSERT_STREQ("folder2\n",lsPrint(fs->current_directory));
+    free(folder2);
+    free(file3);
+    free(file4);
+    free(fs);
+}
+
 TEST(RmdirSuite, FindFolderCheck){
     file_system *fs = initFileSystem(2, 2048000);
     node *folder = createFile(fs, fs->current_directory, std::string("Picture").c_str(), TYPE_DIR);
     node *folder2 = find_dir(fs, std::string("Picture").c_str());
     ASSERT_EQ(folder, folder2);
+    free(fs);
+    free(folder);
 }
 
 TEST(RmdirSuite, FindFileCheck){
