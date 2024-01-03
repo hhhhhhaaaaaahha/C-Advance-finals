@@ -32,3 +32,4 @@ dir:
 
 clean:
 	rm -rf bin
+	rm -f dump_test.dump
