@@ -4,34 +4,42 @@
 
 //cd directory
 TEST(CdSuite, cdDirectory){
-    char  path_to_folder[100] = "./test/test_resources/test_folder";
-    cd(path_to_folder);
-    ASSERT_STREQ("./test/test_resources/test_folder $ ",currentStatus());
-}
-
-//輸入不完整路徑進入directory
-TEST(CdSuite, cdNextDirectory){
-    char  path_to_folder[100] = "./test/test_resources";  
-    char inSide_folder[50] = "test_folder";  
-    cd(path_to_folder);
-    cd(inSide_folder);
-    ASSERT_STREQ("./test/test_resources/test_folder $ ",currentStatus());
+    file_system *fs = initFileSystem(2, 2048000);
+    node *test = createFile(fs, fs->current_directory, std::string("test").c_str(), TYPE_DIR);
+    node *test_resources = createFile(fs, test, std::string("test_resources").c_str(), TYPE_DIR);
+    node *test_folder = createFile(fs, test_resources, std::string("test_folder").c_str(), TYPE_DIR);
+    cd(fs, "test");
+    ASSERT_STREQ("/test $ ",currentStatus());
+    cd(fs, "test_resources");
+    ASSERT_STREQ("/test/test_resources $ ",currentStatus());
+    cd(fs, "test_folder");
+    ASSERT_STREQ("/test/test_resources/test_folder $ ",currentStatus());
 }
 
 //cd ..
 TEST(CdSuite, cdPrevDirectory){
-    char  path_to_folder2[100] = "./test/test_resources/test_folder";
-    char operatorDot[3] = "..";
-    cd(path_to_folder2);
-    cd(operatorDot);
-    ASSERT_STREQ("./test/test_resources $ ",currentStatus());
+    file_system *fs = initFileSystem(2, 2048000);
+    node *test = createFile(fs, fs->current_directory, std::string("test").c_str(), TYPE_DIR);
+    node *test_resources = createFile(fs, test, std::string("test_resources").c_str(), TYPE_DIR);
+    node *test_folder = createFile(fs, test_resources, std::string("test_folder").c_str(), TYPE_DIR);
+    cd(fs, "test");
+    ASSERT_STREQ("/test $ ",currentStatus());
+    cd(fs, "test_resources");
+    ASSERT_STREQ("/test/test_resources $ ",currentStatus());
+    cd(fs, "..");
+    ASSERT_STREQ("/test $ ",currentStatus());
 }
 
 //cd /
 TEST(CdSuite, cdRoot){
-    char  path_to_folder3[100] = "./test/test_resources/test_folder";
-    char operatorSlash[3] = "/";
-    cd(path_to_folder3);
-    cd(operatorSlash);
+    file_system *fs = initFileSystem(2, 2048000);
+    node *test = createFile(fs, fs->current_directory, std::string("test").c_str(), TYPE_DIR);
+    node *test_resources = createFile(fs, test, std::string("test_resources").c_str(), TYPE_DIR);
+    node *test_folder = createFile(fs, test_resources, std::string("test_folder").c_str(), TYPE_DIR);
+    cd(fs, "test");
+    ASSERT_STREQ("/test $ ",currentStatus());
+    cd(fs, "test_resources");
+    ASSERT_STREQ("/test/test_resources $ ",currentStatus());
+    cd(fs, "/");
     ASSERT_STREQ("/ $ ",currentStatus());
 }
