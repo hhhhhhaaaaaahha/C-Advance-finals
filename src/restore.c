@@ -27,14 +27,18 @@ int constructNodeStructure(file_system * fs_r, FILE * dump_fp, node * root){
         else if(c == '{'){
             // construct a new file
             char file_name[NAME];
+            while(fgetc(dump_fp) != ':');
             fscanf(dump_fp, "%s", file_name);
+            // strip the " at the beginning and end
+            int len = strlen(file_name);
+            for(int i = 0; i < len - 2; i++){
+                file_name[i] = file_name[i + 1];
+            }
+            file_name[len - 3] = '\0';
             // construct file
             node * new_file = initNode(fs_r, root, file_name, TYPE_FILE);
-            // construct file structure
-            // char file_content[FILE_SIZE];
-            // fscanf(dump_fp, "%s", file_content);
-            // // write file content
-            // fwrite(file_content, sizeof(char), strlen(file_content), new_file->fp);
+            // TODO : after the file path in file system is implemented,
+            //       we can use the path to construct file content
         }
     }
     return 0;
