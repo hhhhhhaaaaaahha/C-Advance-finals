@@ -8,6 +8,7 @@
 #include "ut_help.h"
 #include "ut_status.h"
 #include "ut_dumpfile.h"
+#include "ut_restore.h"
 
 int main(int argc, char **argv)
 {
