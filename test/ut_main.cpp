@@ -7,6 +7,7 @@
 #include "ut_cat.h"
 #include "ut_help.h"
 #include "ut_status.h"
+#include "ut_dumpfile.h"
 
 int main(int argc, char **argv)
 {
