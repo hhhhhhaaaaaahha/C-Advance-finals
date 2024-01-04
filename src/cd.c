@@ -1,8 +1,4 @@
 #include "../include/cd.h"
-#include "node.h"
-#include "put.h"
-#include <stdio.h>
-#include <stdlib.h>
 
 char current[200] = "/ $ ";
 char *currentParent;
@@ -20,53 +16,54 @@ void removeSubstring(char *str, const char *sub) {
 }
 
 //cd主要判斷程式
-void cd(char *dir)
+int cd(file_system * fs,char *dir)
 {
     // Temp_Inode *inode = (Temp_Inode *)malloc(sizeof(Temp_Inode)); // remember to compile before you commit
     node * inode = (node *)malloc(sizeof(node));
     // 若輸入cd ..
     if (strcmp(dir, "..") == 0)
     {
-        prevDirectory();
+        prevDirectory(fs);
     }
     // 若輸入cd /
     else if (strcmp(dir, "/") == 0)
     {
-        backToRoot();
+        backToRoot(fs);
     }
-    else if (dir)
-    {
-        //若不是輸入完整路徑，則將目前路徑加入欲找尋的path中
-        if (open_file(dir, inode) == -1)
-        {
-            char complete_path[200];
-            strcpy(complete_path, current);
-            removeSubstring(complete_path, " $ ");
-            strcat(complete_path, "/");
-            strcat(complete_path, dir);
-            //用完整路徑再次判斷
-            if(open_file(complete_path, inode) == -1){
-                printf("Not a exist directory!\n");
-                return;
-            }
-            strcpy(current, complete_path);
+    else {        
+        node *it = find_dir(fs, dir);
+        if(it == NULL){
+            printf("Not a exist directory!\n");
+            return -1;
         }else{
-            strcpy(current, dir);
+            fs->current_directory = it;
+            removeSubstring(current, " $ ");
+            if(it->parent != NULL && strcmp(it->parent->name, "/") == 0)
+            {
+                if(strcmp(current, "/") != 0){
+                    memset(current, 0, sizeof(current));
+                    strcat(current, "/");
+                }
+            }else{
+                strcat(current, "/");
+            }
+            strcat(current, dir);
+            strcat(current, " $ ");
+            return 0;
         }
-
-        strcat(current, " $ ");
     }
 }
 
 // 回到根目錄
-void backToRoot()
+void backToRoot(file_system * fs)
 {
-    strcpy(currentParent, "");
+    memset(current, 0, sizeof(current));
     strcpy(current, "/ $ ");
+    fs->current_directory = fs->root;
 }
 
 // 返回上一層目錄
-void prevDirectory()
+int prevDirectory(file_system * fs)
 {
     char *lastSlash = strrchr(current, '/');
 
@@ -75,7 +72,14 @@ void prevDirectory()
         *lastSlash = '\0';
     }
     strcat(current, " $ ");
-    // printf("Return to the previous directory: %s\n", current);
+    node *dirParent = fs->current_directory->parent;
+    if(dirParent == NULL){
+        printf("Already at root!\n");
+        return -1;
+    }else{
+        fs->current_directory = dirParent;
+        return 0;
+    }
 }
 
 // linux輸入前會先印出自己在哪個folder底下
