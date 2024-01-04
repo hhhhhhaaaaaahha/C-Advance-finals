@@ -28,8 +28,6 @@ int record_children_in_dump(file_system *fs, node *parent, FILE *dump_file, char
         fprintf(dump_file, "%s\t\"blocks\": %d,\n", prefix, it->file_info->num_used_blocks);
         // record child node parent
         fprintf(dump_file, "%s\t\"parent\": \"%s\",\n", prefix, parent->name);
-        // record child node children
-        fprintf(dump_file, "%s\t\"children\": [\n", prefix);
         // earily return if the child node has no children
         if (it->left_most_child == NULL)
         {
@@ -38,6 +36,8 @@ int record_children_in_dump(file_system *fs, node *parent, FILE *dump_file, char
             it = it->sibling;
             continue;
         }
+        // record child node children
+        fprintf(dump_file, "%s\t\"children\": [\n", prefix);
         // record child node children
         char *new_prefix = (char *)malloc(sizeof(char) * (strlen(prefix) + 2));
         strcpy(new_prefix, prefix);

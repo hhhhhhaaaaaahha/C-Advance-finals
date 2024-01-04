@@ -1,0 +1,27 @@
+{
+	"partition_size": 2048000,
+	"total_inodes": 500,
+	"used_inodes": 2,
+	"total_blocks": 500,
+	"used_blocks": 2,
+	"files_block": 1,
+	"block_size": 4096,
+	"free_space": 2039808,
+	"root": {
+		"name": "/",
+		"type": "dir",
+		"size": 2048,
+		"blocks": 1,
+		"parent": null,
+		"children": [
+			{
+				"name": "test_file.txt",
+				"type": "file",
+				"size": 2048,
+				"blocks": 1,
+				"parent": "/",
+				"children": []
+			},
+		]
+	}
+}
