@@ -7,6 +7,14 @@
 
 
 # Doc
+- function : ls
+    - Display all file and folder in current directory.
+- function : cd
+    - Change Directory into specific folder.
+- function : rm
+    - Remove the specific file.
+- function : mkdir
+    - Make a new Directory in current directory.
 - function : get 
     - Get the file from in-memory filesystem.
     - And dump the file to the `dump` folder.
