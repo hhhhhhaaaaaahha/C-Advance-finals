@@ -86,3 +86,18 @@ TEST(PutSuite, RealInodeTestFileName)
     free(fs);
 }
 
+TEST(PutSuite, RealInodeInputFileNotExist)
+{
+    std::string path_to_file = "./test/test_resources/test_file_not_exist.txt";
+    file_system *fs = initFileSystem(2, 2048000);
+    node *test_node = put_file(fs, path_to_file.c_str());
+
+    ASSERT_TRUE(test_node==NULL);
+}
+TEST(PutSuite, WeirdPath)
+{
+    std::string path_to_file = "weird_path_to_file.txt";
+    file_system *fs = initFileSystem(2, 2048000);
+    node *test_node = put_file(fs, path_to_file.c_str());
+    ASSERT_TRUE(test_node == NULL);
+}

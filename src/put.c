@@ -85,9 +85,9 @@ node *put_file(file_system *fs, const char *path)
     // init the inode
     node *inode = NULL;
     const char *name = strrchr(path, '/');
-    name ++;
     if (name == NULL)
         return NULL; // wrong name
+    name ++;
     inode = createFile(fs, fs->current_directory, name, TYPE_FILE);
     // open the file pointer
     int ret = open_file(path, inode);
