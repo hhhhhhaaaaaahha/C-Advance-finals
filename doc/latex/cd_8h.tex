@@ -1,0 +1,63 @@
+\hypertarget{cd_8h}{}\doxysection{include/cd.h File Reference}
+\label{cd_8h}\index{include/cd.h@{include/cd.h}}
+{\ttfamily \#include \char`\"{}node.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}put.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}rmdir.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}fs.\+h\char`\"{}}\newline
+{\ttfamily \#include $<$stdlib.\+h$>$}\newline
+{\ttfamily \#include $<$string.\+h$>$}\newline
+{\ttfamily \#include $<$stdio.\+h$>$}\newline
+Include dependency graph for cd.\+h\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{cd_8h__incl}
+\end{center}
+\end{figure}
+This graph shows which files directly or indirectly include this file\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{cd_8h__dep__incl}
+\end{center}
+\end{figure}
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+int \mbox{\hyperlink{cd_8h_a5f6993bc59ffa4a6702955469cf42c3c}{cd}} (\mbox{\hyperlink{structfile__system}{file\+\_\+system}} $\ast$fs, char $\ast$dir)
+\item 
+void \mbox{\hyperlink{cd_8h_af5eb977cf1de827533de8ed51e14deff}{back\+To\+Root}} (\mbox{\hyperlink{structfile__system}{file\+\_\+system}} $\ast$fs)
+\item 
+int \mbox{\hyperlink{cd_8h_acc0b973c71ce277ca9d6537b3fe0c79a}{prev\+Directory}} (\mbox{\hyperlink{structfile__system}{file\+\_\+system}} $\ast$fs)
+\item 
+char $\ast$ \mbox{\hyperlink{cd_8h_a00a03f5d8e61bead0acbe46af6712b7b}{current\+Status}} ()
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{cd_8h_af5eb977cf1de827533de8ed51e14deff}\label{cd_8h_af5eb977cf1de827533de8ed51e14deff}} 
+\index{cd.h@{cd.h}!backToRoot@{backToRoot}}
+\index{backToRoot@{backToRoot}!cd.h@{cd.h}}
+\doxysubsubsection{\texorpdfstring{backToRoot()}{backToRoot()}}
+{\footnotesize\ttfamily void back\+To\+Root (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structfile__system}{file\+\_\+system}} $\ast$}]{fs }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{cd_8h_a5f6993bc59ffa4a6702955469cf42c3c}\label{cd_8h_a5f6993bc59ffa4a6702955469cf42c3c}} 
+\index{cd.h@{cd.h}!cd@{cd}}
+\index{cd@{cd}!cd.h@{cd.h}}
+\doxysubsubsection{\texorpdfstring{cd()}{cd()}}
+{\footnotesize\ttfamily int cd (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structfile__system}{file\+\_\+system}} $\ast$}]{fs,  }\item[{char $\ast$}]{dir }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{cd_8h_a00a03f5d8e61bead0acbe46af6712b7b}\label{cd_8h_a00a03f5d8e61bead0acbe46af6712b7b}} 
+\index{cd.h@{cd.h}!currentStatus@{currentStatus}}
+\index{currentStatus@{currentStatus}!cd.h@{cd.h}}
+\doxysubsubsection{\texorpdfstring{currentStatus()}{currentStatus()}}
+{\footnotesize\ttfamily char$\ast$ current\+Status (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{cd_8h_acc0b973c71ce277ca9d6537b3fe0c79a}\label{cd_8h_acc0b973c71ce277ca9d6537b3fe0c79a}} 
+\index{cd.h@{cd.h}!prevDirectory@{prevDirectory}}
+\index{prevDirectory@{prevDirectory}!cd.h@{cd.h}}
+\doxysubsubsection{\texorpdfstring{prevDirectory()}{prevDirectory()}}
+{\footnotesize\ttfamily int prev\+Directory (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structfile__system}{file\+\_\+system}} $\ast$}]{fs }\end{DoxyParamCaption})}
+

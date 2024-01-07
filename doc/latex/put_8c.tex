@@ -1,0 +1,60 @@
+\hypertarget{put_8c}{}\doxysection{src/put.c File Reference}
+\label{put_8c}\index{src/put.c@{src/put.c}}
+{\ttfamily \#include \char`\"{}../include/put.\+h\char`\"{}}\newline
+{\ttfamily \#include $<$sys/stat.\+h$>$}\newline
+{\ttfamily \#include $<$string.\+h$>$}\newline
+{\ttfamily \#include $<$stdlib.\+h$>$}\newline
+Include dependency graph for put.\+c\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{put_8c__incl}
+\end{center}
+\end{figure}
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+int \mbox{\hyperlink{put_8c_a764ee3bfe9c8a81f266c253d56a157c6}{open\+\_\+file\+\_\+for\+\_\+test}} (const char $\ast$path, \mbox{\hyperlink{structTemp__Inode}{Temp\+\_\+\+Inode}} $\ast$inode)
+\item 
+int \mbox{\hyperlink{put_8c_ab17ce425403cc452abf642e690de841f}{open\+\_\+file}} (const char $\ast$path, \mbox{\hyperlink{structnode}{node}} $\ast$inode)
+\item 
+int \mbox{\hyperlink{put_8c_a5c13169c4b3490a3a315424c24663144}{check\+\_\+node\+\_\+size}} (const char $\ast$path)
+\item 
+\mbox{\hyperlink{structnode}{node}} $\ast$ \mbox{\hyperlink{put_8c_a24305fc581c706bcc022d8d9c3d97b1e}{put\+\_\+file}} (\mbox{\hyperlink{structfile__system}{file\+\_\+system}} $\ast$fs, const char $\ast$path)
+\item 
+int \mbox{\hyperlink{put_8c_a2cf058022811dd5907661532f0f8727f}{read\+\_\+file\+\_\+buffer}} (\mbox{\hyperlink{structTemp__Inode}{Temp\+\_\+\+Inode}} $\ast$inode, FILE $\ast$file, int size)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{put_8c_a5c13169c4b3490a3a315424c24663144}\label{put_8c_a5c13169c4b3490a3a315424c24663144}} 
+\index{put.c@{put.c}!check\_node\_size@{check\_node\_size}}
+\index{check\_node\_size@{check\_node\_size}!put.c@{put.c}}
+\doxysubsubsection{\texorpdfstring{check\_node\_size()}{check\_node\_size()}}
+{\footnotesize\ttfamily int check\+\_\+node\+\_\+size (\begin{DoxyParamCaption}\item[{const char $\ast$}]{path }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{put_8c_ab17ce425403cc452abf642e690de841f}\label{put_8c_ab17ce425403cc452abf642e690de841f}} 
+\index{put.c@{put.c}!open\_file@{open\_file}}
+\index{open\_file@{open\_file}!put.c@{put.c}}
+\doxysubsubsection{\texorpdfstring{open\_file()}{open\_file()}}
+{\footnotesize\ttfamily int open\+\_\+file (\begin{DoxyParamCaption}\item[{const char $\ast$}]{path,  }\item[{\mbox{\hyperlink{structnode}{node}} $\ast$}]{inode }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{put_8c_a764ee3bfe9c8a81f266c253d56a157c6}\label{put_8c_a764ee3bfe9c8a81f266c253d56a157c6}} 
+\index{put.c@{put.c}!open\_file\_for\_test@{open\_file\_for\_test}}
+\index{open\_file\_for\_test@{open\_file\_for\_test}!put.c@{put.c}}
+\doxysubsubsection{\texorpdfstring{open\_file\_for\_test()}{open\_file\_for\_test()}}
+{\footnotesize\ttfamily int open\+\_\+file\+\_\+for\+\_\+test (\begin{DoxyParamCaption}\item[{const char $\ast$}]{path,  }\item[{\mbox{\hyperlink{structTemp__Inode}{Temp\+\_\+\+Inode}} $\ast$}]{inode }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{put_8c_a24305fc581c706bcc022d8d9c3d97b1e}\label{put_8c_a24305fc581c706bcc022d8d9c3d97b1e}} 
+\index{put.c@{put.c}!put\_file@{put\_file}}
+\index{put\_file@{put\_file}!put.c@{put.c}}
+\doxysubsubsection{\texorpdfstring{put\_file()}{put\_file()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{structnode}{node}}$\ast$ put\+\_\+file (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structfile__system}{file\+\_\+system}} $\ast$}]{fs,  }\item[{const char $\ast$}]{path }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{put_8c_a2cf058022811dd5907661532f0f8727f}\label{put_8c_a2cf058022811dd5907661532f0f8727f}} 
+\index{put.c@{put.c}!read\_file\_buffer@{read\_file\_buffer}}
+\index{read\_file\_buffer@{read\_file\_buffer}!put.c@{put.c}}
+\doxysubsubsection{\texorpdfstring{read\_file\_buffer()}{read\_file\_buffer()}}
+{\footnotesize\ttfamily int read\+\_\+file\+\_\+buffer (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structTemp__Inode}{Temp\+\_\+\+Inode}} $\ast$}]{inode,  }\item[{FILE $\ast$}]{file,  }\item[{int}]{size }\end{DoxyParamCaption})}
+

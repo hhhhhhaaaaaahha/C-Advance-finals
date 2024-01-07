@@ -1,0 +1,62 @@
+\hypertarget{rmdir_8h}{}\doxysection{include/rmdir.h File Reference}
+\label{rmdir_8h}\index{include/rmdir.h@{include/rmdir.h}}
+This graph shows which files directly or indirectly include this file\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{rmdir_8h__dep__incl}
+\end{center}
+\end{figure}
+\doxysubsection*{Typedefs}
+\begin{DoxyCompactItemize}
+\item 
+typedef struct \mbox{\hyperlink{structfile__system}{file\+\_\+system}} \mbox{\hyperlink{rmdir_8h_a56389010ee2dc9e6a4b4507463ee4604}{file\+\_\+system}}
+\item 
+typedef struct \mbox{\hyperlink{structnode}{node}} \mbox{\hyperlink{rmdir_8h_af4aeda155dbe167f1c1cf38cb65bf324}{node}}
+\end{DoxyCompactItemize}
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+int \mbox{\hyperlink{rmdir_8h_aa7f2490b3db84789f9b517f558d852af}{rm\+\_\+dir}} (\mbox{\hyperlink{structfile__system}{file\+\_\+system}} $\ast$fs, const char $\ast$folder\+\_\+name)
+\item 
+\mbox{\hyperlink{structnode}{node}} $\ast$ \mbox{\hyperlink{rmdir_8h_a56d55b5a70310689d05bb70fdcd05bb1}{find\+\_\+dir}} (\mbox{\hyperlink{structfile__system}{file\+\_\+system}} $\ast$fs, const char $\ast$folder\+\_\+name)
+\item 
+\mbox{\hyperlink{structnode}{node}} $\ast$ \mbox{\hyperlink{rmdir_8h_ae9f8fdecd01b8bc3394bfb431e80c2cb}{find\+\_\+file}} (\mbox{\hyperlink{structfile__system}{file\+\_\+system}} $\ast$fs, const char $\ast$file\+\_\+name)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Typedef Documentation}
+\mbox{\Hypertarget{rmdir_8h_a56389010ee2dc9e6a4b4507463ee4604}\label{rmdir_8h_a56389010ee2dc9e6a4b4507463ee4604}} 
+\index{rmdir.h@{rmdir.h}!file\_system@{file\_system}}
+\index{file\_system@{file\_system}!rmdir.h@{rmdir.h}}
+\doxysubsubsection{\texorpdfstring{file\_system}{file\_system}}
+{\footnotesize\ttfamily typedef struct \mbox{\hyperlink{structfile__system}{file\+\_\+system}} \mbox{\hyperlink{structfile__system}{file\+\_\+system}}}
+
+\mbox{\Hypertarget{rmdir_8h_af4aeda155dbe167f1c1cf38cb65bf324}\label{rmdir_8h_af4aeda155dbe167f1c1cf38cb65bf324}} 
+\index{rmdir.h@{rmdir.h}!node@{node}}
+\index{node@{node}!rmdir.h@{rmdir.h}}
+\doxysubsubsection{\texorpdfstring{node}{node}}
+{\footnotesize\ttfamily typedef struct \mbox{\hyperlink{structnode}{node}} \mbox{\hyperlink{structnode}{node}}}
+
+
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{rmdir_8h_a56d55b5a70310689d05bb70fdcd05bb1}\label{rmdir_8h_a56d55b5a70310689d05bb70fdcd05bb1}} 
+\index{rmdir.h@{rmdir.h}!find\_dir@{find\_dir}}
+\index{find\_dir@{find\_dir}!rmdir.h@{rmdir.h}}
+\doxysubsubsection{\texorpdfstring{find\_dir()}{find\_dir()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{structnode}{node}}$\ast$ find\+\_\+dir (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structfile__system}{file\+\_\+system}} $\ast$}]{fs,  }\item[{const char $\ast$}]{folder\+\_\+name }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{rmdir_8h_ae9f8fdecd01b8bc3394bfb431e80c2cb}\label{rmdir_8h_ae9f8fdecd01b8bc3394bfb431e80c2cb}} 
+\index{rmdir.h@{rmdir.h}!find\_file@{find\_file}}
+\index{find\_file@{find\_file}!rmdir.h@{rmdir.h}}
+\doxysubsubsection{\texorpdfstring{find\_file()}{find\_file()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{structnode}{node}}$\ast$ find\+\_\+file (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structfile__system}{file\+\_\+system}} $\ast$}]{fs,  }\item[{const char $\ast$}]{file\+\_\+name }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{rmdir_8h_aa7f2490b3db84789f9b517f558d852af}\label{rmdir_8h_aa7f2490b3db84789f9b517f558d852af}} 
+\index{rmdir.h@{rmdir.h}!rm\_dir@{rm\_dir}}
+\index{rm\_dir@{rm\_dir}!rmdir.h@{rmdir.h}}
+\doxysubsubsection{\texorpdfstring{rm\_dir()}{rm\_dir()}}
+{\footnotesize\ttfamily int rm\+\_\+dir (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structfile__system}{file\+\_\+system}} $\ast$}]{fs,  }\item[{const char $\ast$}]{folder\+\_\+name }\end{DoxyParamCaption})}
+

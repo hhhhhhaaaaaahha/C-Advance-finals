@@ -2,6 +2,13 @@
 #include <stdio.h>
 #include <stdlib.h>
 
+
+/**
+ * @brief A function to mimic a linux command cd
+ * 
+ * @param fs 
+ * @param filename 
+ */
 void find_and_print(file_system *fs, const char *filename) {
     // find out which node does the file locate at
     node *file = findFile(fs->current_directory, filename); 
@@ -36,7 +43,13 @@ void find_and_print(file_system *fs, const char *filename) {
 }
 
 
-// find out which node does the file locate
+/**
+ * @brief Find a node in a folder node, recursively
+ * 
+ * @param current_directory 
+ * @param filename 
+ * @return node* 
+ */
 node *findFile(node *current_directory, const char *filename) {
     node *current = current_directory->left_most_child;
     while (current != NULL) {

@@ -1,0 +1,60 @@
+\hypertarget{cat_8c}{}\doxysection{src/cat.c File Reference}
+\label{cat_8c}\index{src/cat.c@{src/cat.c}}
+{\ttfamily \#include \char`\"{}../include/cat.\+h\char`\"{}}\newline
+{\ttfamily \#include $<$stdio.\+h$>$}\newline
+{\ttfamily \#include $<$stdlib.\+h$>$}\newline
+Include dependency graph for cat.\+c\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=326pt]{cat_8c__incl}
+\end{center}
+\end{figure}
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{cat_8c_adecd6cd407c68ff304f43febf2adf59d}{find\+\_\+and\+\_\+print}} (\mbox{\hyperlink{structfile__system}{file\+\_\+system}} $\ast$fs, const char $\ast$filename)
+\begin{DoxyCompactList}\small\item\em A function to mimic a linux command cd. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{structnode}{node}} $\ast$ \mbox{\hyperlink{cat_8c_ae8d5a358f056a77d13c491afe11ee02e}{find\+File}} (\mbox{\hyperlink{structnode}{node}} $\ast$current\+\_\+directory, const char $\ast$filename)
+\begin{DoxyCompactList}\small\item\em Find a node in a folder node, recursively. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{cat_8c_adecd6cd407c68ff304f43febf2adf59d}\label{cat_8c_adecd6cd407c68ff304f43febf2adf59d}} 
+\index{cat.c@{cat.c}!find\_and\_print@{find\_and\_print}}
+\index{find\_and\_print@{find\_and\_print}!cat.c@{cat.c}}
+\doxysubsubsection{\texorpdfstring{find\_and\_print()}{find\_and\_print()}}
+{\footnotesize\ttfamily void find\+\_\+and\+\_\+print (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structfile__system}{file\+\_\+system}} $\ast$}]{fs,  }\item[{const char $\ast$}]{filename }\end{DoxyParamCaption})}
+
+
+
+A function to mimic a linux command cd. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em fs} & \\
+\hline
+{\em filename} & \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{cat_8c_ae8d5a358f056a77d13c491afe11ee02e}\label{cat_8c_ae8d5a358f056a77d13c491afe11ee02e}} 
+\index{cat.c@{cat.c}!findFile@{findFile}}
+\index{findFile@{findFile}!cat.c@{cat.c}}
+\doxysubsubsection{\texorpdfstring{findFile()}{findFile()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{structnode}{node}}$\ast$ find\+File (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structnode}{node}} $\ast$}]{current\+\_\+directory,  }\item[{const char $\ast$}]{filename }\end{DoxyParamCaption})}
+
+
+
+Find a node in a folder node, recursively. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em current\+\_\+directory} & \\
+\hline
+{\em filename} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+node$\ast$ 
+\end{DoxyReturn}

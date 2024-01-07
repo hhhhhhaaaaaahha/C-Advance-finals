@@ -1,0 +1,78 @@
+\hypertarget{dump_8c}{}\doxysection{src/dump.c File Reference}
+\label{dump_8c}\index{src/dump.c@{src/dump.c}}
+{\ttfamily \#include \char`\"{}dump.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}fs.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}node.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}status.\+h\char`\"{}}\newline
+{\ttfamily \#include $<$string.\+h$>$}\newline
+{\ttfamily \#include $<$unistd.\+h$>$}\newline
+Include dependency graph for dump.\+c\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{dump_8c__incl}
+\end{center}
+\end{figure}
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+long long \mbox{\hyperlink{dump_8c_ad39070f845f0a50bc031170f72618a9d}{free\+\_\+space}} (\mbox{\hyperlink{structfile__system}{file\+\_\+system}} $\ast$fs)
+\item 
+int \mbox{\hyperlink{dump_8c_a71264b0da7a31af0744eb760e9a49e2c}{record\+\_\+children\+\_\+in\+\_\+dump}} (\mbox{\hyperlink{structfile__system}{file\+\_\+system}} $\ast$fs, \mbox{\hyperlink{structnode}{node}} $\ast$parent, FILE $\ast$dump\+\_\+file, char $\ast$prefix)
+\item 
+int \mbox{\hyperlink{dump_8c_a47f0e83dcc449410079a5c5bf6e5328c}{record\+\_\+root\+\_\+in\+\_\+dump}} (\mbox{\hyperlink{structfile__system}{file\+\_\+system}} $\ast$fs, \mbox{\hyperlink{structnode}{node}} $\ast$root, FILE $\ast$dump\+\_\+file)
+\item 
+int \mbox{\hyperlink{dump_8c_a669166b40d9c75fa2bcaeddfb637af9d}{dump}} (\mbox{\hyperlink{structfile__system}{file\+\_\+system}} $\ast$fs, const char $\ast$file\+\_\+name)
+\item 
+int \mbox{\hyperlink{dump_8c_a64e61518db6f2cff5e3d92fc1a8dd6b9}{record\+\_\+children\+\_\+in\+\_\+dump\+\_\+simple}} (\mbox{\hyperlink{structfile__system}{file\+\_\+system}} $\ast$fs, \mbox{\hyperlink{structnode}{node}} $\ast$parent, FILE $\ast$dump\+\_\+file, char $\ast$prefix)
+\item 
+int \mbox{\hyperlink{dump_8c_a9446fb4785278608885ea1a355b5a113}{record\+\_\+root\+\_\+in\+\_\+dump\+\_\+simple}} (\mbox{\hyperlink{structfile__system}{file\+\_\+system}} $\ast$fs, \mbox{\hyperlink{structnode}{node}} $\ast$root, FILE $\ast$dump\+\_\+file)
+\item 
+int \mbox{\hyperlink{dump_8c_a9786fdcc31c11f04fc40bab3857423c9}{dump\+\_\+simple}} (\mbox{\hyperlink{structfile__system}{file\+\_\+system}} $\ast$fs, const char $\ast$file\+\_\+name)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{dump_8c_a669166b40d9c75fa2bcaeddfb637af9d}\label{dump_8c_a669166b40d9c75fa2bcaeddfb637af9d}} 
+\index{dump.c@{dump.c}!dump@{dump}}
+\index{dump@{dump}!dump.c@{dump.c}}
+\doxysubsubsection{\texorpdfstring{dump()}{dump()}}
+{\footnotesize\ttfamily int dump (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structfile__system}{file\+\_\+system}} $\ast$}]{fs,  }\item[{const char $\ast$}]{file\+\_\+name }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{dump_8c_a9786fdcc31c11f04fc40bab3857423c9}\label{dump_8c_a9786fdcc31c11f04fc40bab3857423c9}} 
+\index{dump.c@{dump.c}!dump\_simple@{dump\_simple}}
+\index{dump\_simple@{dump\_simple}!dump.c@{dump.c}}
+\doxysubsubsection{\texorpdfstring{dump\_simple()}{dump\_simple()}}
+{\footnotesize\ttfamily int dump\+\_\+simple (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structfile__system}{file\+\_\+system}} $\ast$}]{fs,  }\item[{const char $\ast$}]{file\+\_\+name }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{dump_8c_ad39070f845f0a50bc031170f72618a9d}\label{dump_8c_ad39070f845f0a50bc031170f72618a9d}} 
+\index{dump.c@{dump.c}!free\_space@{free\_space}}
+\index{free\_space@{free\_space}!dump.c@{dump.c}}
+\doxysubsubsection{\texorpdfstring{free\_space()}{free\_space()}}
+{\footnotesize\ttfamily long long free\+\_\+space (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structfile__system}{file\+\_\+system}} $\ast$}]{fs }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{dump_8c_a71264b0da7a31af0744eb760e9a49e2c}\label{dump_8c_a71264b0da7a31af0744eb760e9a49e2c}} 
+\index{dump.c@{dump.c}!record\_children\_in\_dump@{record\_children\_in\_dump}}
+\index{record\_children\_in\_dump@{record\_children\_in\_dump}!dump.c@{dump.c}}
+\doxysubsubsection{\texorpdfstring{record\_children\_in\_dump()}{record\_children\_in\_dump()}}
+{\footnotesize\ttfamily int record\+\_\+children\+\_\+in\+\_\+dump (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structfile__system}{file\+\_\+system}} $\ast$}]{fs,  }\item[{\mbox{\hyperlink{structnode}{node}} $\ast$}]{parent,  }\item[{FILE $\ast$}]{dump\+\_\+file,  }\item[{char $\ast$}]{prefix }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{dump_8c_a64e61518db6f2cff5e3d92fc1a8dd6b9}\label{dump_8c_a64e61518db6f2cff5e3d92fc1a8dd6b9}} 
+\index{dump.c@{dump.c}!record\_children\_in\_dump\_simple@{record\_children\_in\_dump\_simple}}
+\index{record\_children\_in\_dump\_simple@{record\_children\_in\_dump\_simple}!dump.c@{dump.c}}
+\doxysubsubsection{\texorpdfstring{record\_children\_in\_dump\_simple()}{record\_children\_in\_dump\_simple()}}
+{\footnotesize\ttfamily int record\+\_\+children\+\_\+in\+\_\+dump\+\_\+simple (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structfile__system}{file\+\_\+system}} $\ast$}]{fs,  }\item[{\mbox{\hyperlink{structnode}{node}} $\ast$}]{parent,  }\item[{FILE $\ast$}]{dump\+\_\+file,  }\item[{char $\ast$}]{prefix }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{dump_8c_a47f0e83dcc449410079a5c5bf6e5328c}\label{dump_8c_a47f0e83dcc449410079a5c5bf6e5328c}} 
+\index{dump.c@{dump.c}!record\_root\_in\_dump@{record\_root\_in\_dump}}
+\index{record\_root\_in\_dump@{record\_root\_in\_dump}!dump.c@{dump.c}}
+\doxysubsubsection{\texorpdfstring{record\_root\_in\_dump()}{record\_root\_in\_dump()}}
+{\footnotesize\ttfamily int record\+\_\+root\+\_\+in\+\_\+dump (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structfile__system}{file\+\_\+system}} $\ast$}]{fs,  }\item[{\mbox{\hyperlink{structnode}{node}} $\ast$}]{root,  }\item[{FILE $\ast$}]{dump\+\_\+file }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{dump_8c_a9446fb4785278608885ea1a355b5a113}\label{dump_8c_a9446fb4785278608885ea1a355b5a113}} 
+\index{dump.c@{dump.c}!record\_root\_in\_dump\_simple@{record\_root\_in\_dump\_simple}}
+\index{record\_root\_in\_dump\_simple@{record\_root\_in\_dump\_simple}!dump.c@{dump.c}}
+\doxysubsubsection{\texorpdfstring{record\_root\_in\_dump\_simple()}{record\_root\_in\_dump\_simple()}}
+{\footnotesize\ttfamily int record\+\_\+root\+\_\+in\+\_\+dump\+\_\+simple (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structfile__system}{file\+\_\+system}} $\ast$}]{fs,  }\item[{\mbox{\hyperlink{structnode}{node}} $\ast$}]{root,  }\item[{FILE $\ast$}]{dump\+\_\+file }\end{DoxyParamCaption})}
+
