@@ -19,9 +19,11 @@
 void show_prefix(file_system *fs)
 {
     // add cwd to prefix
-    char cwd[MAX_PREFIX_LENGTH];
+    char cwd[MAX_PREFIX_LENGTH] = {0};
+    
     strcpy(cwd, "");
     node *it = fs->current_directory;
+
     if (it == fs->root)
     {
         strcpy(cwd, "/");
@@ -29,12 +31,12 @@ void show_prefix(file_system *fs)
         return;
     }
 
-    while (it == fs->root)
+    while (it != fs->root)
     {
         // add to front of cwd
         char *temp = (char *)malloc(sizeof(char) * (MAX_PREFIX_LENGTH + 1));
-        strcpy(temp, it->name);
-        strcat(temp, "/");
+        strcpy(temp, "/");
+        strcat(temp, it->name);
         strcat(temp, cwd);
         strcpy(cwd, temp);
         free(temp);
@@ -47,12 +49,19 @@ exit_code_t fake_terminal(const char *command, file_system *fs)
 {
     // split command
     char *command_copy = (char *)malloc(sizeof(char) * (strlen(command) + 1));
+
     strcpy(command_copy, command);
+    command_copy[strlen(command_copy)-1] = '\0';
+        // printf("command = %s\n", command_copy);
     char *command_split = strtok(command_copy, " ");
+    if(command_split == NULL){
+        return UI_EXIT_SUCCESS;
+    }
     if (strcmp(command_split, "ls") == 0)
     {
         // ls
-        printf("%s", lsPrint(fs->current_directory));
+        char * temp_buff = lsPrint(fs->current_directory);
+        if(temp_buff != NULL)printf("%s", temp_buff);
         return UI_EXIT_SUCCESS;
     }
     else if (strcmp(command_split, "cd") == 0)
@@ -141,6 +150,7 @@ exit_code_t fake_terminal(const char *command, file_system *fs)
     {
         // put
         command_split = strtok(NULL, " ");
+        printf("DEBUG: path = %s\n", command_split);
         if (command_split == NULL)
         {
             printf("Usage: put <external file path>\n");

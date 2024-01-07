@@ -1,7 +1,7 @@
 #include "rmdir.h"
 #include "fs.h"
 #include "node.h"
-#include "util.h"
+#include "fs_utils.h"
 #include <string.h>
 
 // delete whole folder

@@ -38,6 +38,19 @@ TEST(UISuite, Cat)
     free(fs);
 }
 
+TEST(UISuite, CatEOL)
+{
+    file_system *fs = initFileSystem(2, 2048000);
+    std::string input = "cat\n";
+    std::string output = "Usage: cat <filename>\n";
+    testing::internal::CaptureStdout();
+    exit_code_t ret = fake_terminal(input.c_str(), fs);
+    ASSERT_EQ(ret, UI_EXIT_FAILURE);
+    std::string output2 = testing::internal::GetCapturedStdout();
+    ASSERT_STREQ(output.c_str(), output2.c_str());
+    free(fs);
+}
+
 TEST(UISuite, CatNotFound)
 {
     file_system *fs = initFileSystem(2, 2048000);
