@@ -1,0 +1,79 @@
+\hypertarget{cd_8c}{}\doxysection{src/cd.c File Reference}
+\label{cd_8c}\index{src/cd.c@{src/cd.c}}
+{\ttfamily \#include \char`\"{}../include/cd.\+h\char`\"{}}\newline
+Include dependency graph for cd.\+c\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{cd_8c__incl}
+\end{center}
+\end{figure}
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{cd_8c_aa20b8eb32a8ea335f0a21949701a4fb8}{remove\+Substring}} (char $\ast$str, const char $\ast$sub)
+\item 
+int \mbox{\hyperlink{cd_8c_a5f6993bc59ffa4a6702955469cf42c3c}{cd}} (\mbox{\hyperlink{structfile__system}{file\+\_\+system}} $\ast$fs, char $\ast$dir)
+\item 
+void \mbox{\hyperlink{cd_8c_af5eb977cf1de827533de8ed51e14deff}{back\+To\+Root}} (\mbox{\hyperlink{structfile__system}{file\+\_\+system}} $\ast$fs)
+\item 
+int \mbox{\hyperlink{cd_8c_acc0b973c71ce277ca9d6537b3fe0c79a}{prev\+Directory}} (\mbox{\hyperlink{structfile__system}{file\+\_\+system}} $\ast$fs)
+\item 
+char $\ast$ \mbox{\hyperlink{cd_8c_a00a03f5d8e61bead0acbe46af6712b7b}{current\+Status}} ()
+\end{DoxyCompactItemize}
+\doxysubsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+char \mbox{\hyperlink{cd_8c_a6f65712b8da412145e83badc912fed7c}{current}} \mbox{[}200\mbox{]} = \char`\"{}/ \$ \char`\"{}
+\item 
+char $\ast$ \mbox{\hyperlink{cd_8c_a2fd26cf64add7029f96b79ca8448481e}{current\+Parent}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{cd_8c_af5eb977cf1de827533de8ed51e14deff}\label{cd_8c_af5eb977cf1de827533de8ed51e14deff}} 
+\index{cd.c@{cd.c}!backToRoot@{backToRoot}}
+\index{backToRoot@{backToRoot}!cd.c@{cd.c}}
+\doxysubsubsection{\texorpdfstring{backToRoot()}{backToRoot()}}
+{\footnotesize\ttfamily void back\+To\+Root (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structfile__system}{file\+\_\+system}} $\ast$}]{fs }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{cd_8c_a5f6993bc59ffa4a6702955469cf42c3c}\label{cd_8c_a5f6993bc59ffa4a6702955469cf42c3c}} 
+\index{cd.c@{cd.c}!cd@{cd}}
+\index{cd@{cd}!cd.c@{cd.c}}
+\doxysubsubsection{\texorpdfstring{cd()}{cd()}}
+{\footnotesize\ttfamily int cd (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structfile__system}{file\+\_\+system}} $\ast$}]{fs,  }\item[{char $\ast$}]{dir }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{cd_8c_a00a03f5d8e61bead0acbe46af6712b7b}\label{cd_8c_a00a03f5d8e61bead0acbe46af6712b7b}} 
+\index{cd.c@{cd.c}!currentStatus@{currentStatus}}
+\index{currentStatus@{currentStatus}!cd.c@{cd.c}}
+\doxysubsubsection{\texorpdfstring{currentStatus()}{currentStatus()}}
+{\footnotesize\ttfamily char$\ast$ current\+Status (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{cd_8c_acc0b973c71ce277ca9d6537b3fe0c79a}\label{cd_8c_acc0b973c71ce277ca9d6537b3fe0c79a}} 
+\index{cd.c@{cd.c}!prevDirectory@{prevDirectory}}
+\index{prevDirectory@{prevDirectory}!cd.c@{cd.c}}
+\doxysubsubsection{\texorpdfstring{prevDirectory()}{prevDirectory()}}
+{\footnotesize\ttfamily int prev\+Directory (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structfile__system}{file\+\_\+system}} $\ast$}]{fs }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{cd_8c_aa20b8eb32a8ea335f0a21949701a4fb8}\label{cd_8c_aa20b8eb32a8ea335f0a21949701a4fb8}} 
+\index{cd.c@{cd.c}!removeSubstring@{removeSubstring}}
+\index{removeSubstring@{removeSubstring}!cd.c@{cd.c}}
+\doxysubsubsection{\texorpdfstring{removeSubstring()}{removeSubstring()}}
+{\footnotesize\ttfamily void remove\+Substring (\begin{DoxyParamCaption}\item[{char $\ast$}]{str,  }\item[{const char $\ast$}]{sub }\end{DoxyParamCaption})}
+
+
+
+\doxysubsection{Variable Documentation}
+\mbox{\Hypertarget{cd_8c_a6f65712b8da412145e83badc912fed7c}\label{cd_8c_a6f65712b8da412145e83badc912fed7c}} 
+\index{cd.c@{cd.c}!current@{current}}
+\index{current@{current}!cd.c@{cd.c}}
+\doxysubsubsection{\texorpdfstring{current}{current}}
+{\footnotesize\ttfamily char current\mbox{[}200\mbox{]} = \char`\"{}/ \$ \char`\"{}}
+
+\mbox{\Hypertarget{cd_8c_a2fd26cf64add7029f96b79ca8448481e}\label{cd_8c_a2fd26cf64add7029f96b79ca8448481e}} 
+\index{cd.c@{cd.c}!currentParent@{currentParent}}
+\index{currentParent@{currentParent}!cd.c@{cd.c}}
+\doxysubsubsection{\texorpdfstring{currentParent}{currentParent}}
+{\footnotesize\ttfamily char$\ast$ current\+Parent}
+

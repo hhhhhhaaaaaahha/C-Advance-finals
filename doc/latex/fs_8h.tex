@@ -1,0 +1,123 @@
+\hypertarget{fs_8h}{}\doxysection{include/fs.h File Reference}
+\label{fs_8h}\index{include/fs.h@{include/fs.h}}
+{\ttfamily \#include $<$stdlib.\+h$>$}\newline
+{\ttfamily \#include \char`\"{}metadata.\+h\char`\"{}}\newline
+Include dependency graph for fs.\+h\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=224pt]{fs_8h__incl}
+\end{center}
+\end{figure}
+This graph shows which files directly or indirectly include this file\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{fs_8h__dep__incl}
+\end{center}
+\end{figure}
+\doxysubsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+struct \mbox{\hyperlink{structfile__system}{file\+\_\+system}}
+\end{DoxyCompactItemize}
+\doxysubsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \mbox{\hyperlink{fs_8h_ad51ded0bbd705f02f73fc60c0b721ced}{BLOCK\+\_\+\+SIZE}}~4096
+\end{DoxyCompactItemize}
+\doxysubsection*{Typedefs}
+\begin{DoxyCompactItemize}
+\item 
+typedef struct \mbox{\hyperlink{structnode}{node}} \mbox{\hyperlink{fs_8h_af4aeda155dbe167f1c1cf38cb65bf324}{node}}
+\item 
+typedef struct \mbox{\hyperlink{structfile__system}{file\+\_\+system}} \mbox{\hyperlink{fs_8h_a56389010ee2dc9e6a4b4507463ee4604}{file\+\_\+system}}
+\end{DoxyCompactItemize}
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{structfile__system}{file\+\_\+system}} $\ast$ \mbox{\hyperlink{fs_8h_ab8d0e7c4b3101795cd15db9effef0fdd}{init\+File\+System}} (int mode, long long partition\+\_\+size)
+\item 
+int \mbox{\hyperlink{fs_8h_af1a830ec80b41eb8a928ea35ae674e7a}{allocate\+Inode}} (\mbox{\hyperlink{structfile__system}{file\+\_\+system}} $\ast$fs)
+\item 
+int \mbox{\hyperlink{fs_8h_a1e402cc8c6f72b8725b2997858e3cc5c}{allocate\+Data\+Block}} (\mbox{\hyperlink{structfile__system}{file\+\_\+system}} $\ast$fs)
+\item 
+void \mbox{\hyperlink{fs_8h_a492af308e2e3011a38c6cb2ce2d516b5}{reclaim\+Inode}} (\mbox{\hyperlink{structfile__system}{file\+\_\+system}} $\ast$fs, int inum)
+\item 
+\mbox{\hyperlink{structnode}{node}} $\ast$ \mbox{\hyperlink{fs_8h_a9e3149667f6c0b90f124a0eb6fd47914}{create\+File}} (\mbox{\hyperlink{structfile__system}{file\+\_\+system}} $\ast$fs, \mbox{\hyperlink{structnode}{node}} $\ast$parent, const char $\ast$name, \mbox{\hyperlink{metadata_8h_aaf047b6ce458f7c55fd215920656d128}{file\+\_\+type}} node\+\_\+type)
+\item 
+void \mbox{\hyperlink{fs_8h_a85404001377ed164ef77c6c38d13152b}{delete\+File}} (\mbox{\hyperlink{structfile__system}{file\+\_\+system}} $\ast$fs, \mbox{\hyperlink{structnode}{node}} $\ast$target)
+\item 
+void \mbox{\hyperlink{fs_8h_a16625e7b04fc7239f1f297b691860cc3}{free\+File\+System}} (\mbox{\hyperlink{structfile__system}{file\+\_\+system}} $\ast$fs)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Macro Definition Documentation}
+\mbox{\Hypertarget{fs_8h_ad51ded0bbd705f02f73fc60c0b721ced}\label{fs_8h_ad51ded0bbd705f02f73fc60c0b721ced}} 
+\index{fs.h@{fs.h}!BLOCK\_SIZE@{BLOCK\_SIZE}}
+\index{BLOCK\_SIZE@{BLOCK\_SIZE}!fs.h@{fs.h}}
+\doxysubsubsection{\texorpdfstring{BLOCK\_SIZE}{BLOCK\_SIZE}}
+{\footnotesize\ttfamily \#define BLOCK\+\_\+\+SIZE~4096}
+
+
+
+\doxysubsection{Typedef Documentation}
+\mbox{\Hypertarget{fs_8h_a56389010ee2dc9e6a4b4507463ee4604}\label{fs_8h_a56389010ee2dc9e6a4b4507463ee4604}} 
+\index{fs.h@{fs.h}!file\_system@{file\_system}}
+\index{file\_system@{file\_system}!fs.h@{fs.h}}
+\doxysubsubsection{\texorpdfstring{file\_system}{file\_system}}
+{\footnotesize\ttfamily typedef struct \mbox{\hyperlink{structfile__system}{file\+\_\+system}} \mbox{\hyperlink{structfile__system}{file\+\_\+system}}}
+
+\mbox{\Hypertarget{fs_8h_af4aeda155dbe167f1c1cf38cb65bf324}\label{fs_8h_af4aeda155dbe167f1c1cf38cb65bf324}} 
+\index{fs.h@{fs.h}!node@{node}}
+\index{node@{node}!fs.h@{fs.h}}
+\doxysubsubsection{\texorpdfstring{node}{node}}
+{\footnotesize\ttfamily typedef struct \mbox{\hyperlink{structnode}{node}} \mbox{\hyperlink{structnode}{node}}}
+
+
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{fs_8h_a1e402cc8c6f72b8725b2997858e3cc5c}\label{fs_8h_a1e402cc8c6f72b8725b2997858e3cc5c}} 
+\index{fs.h@{fs.h}!allocateDataBlock@{allocateDataBlock}}
+\index{allocateDataBlock@{allocateDataBlock}!fs.h@{fs.h}}
+\doxysubsubsection{\texorpdfstring{allocateDataBlock()}{allocateDataBlock()}}
+{\footnotesize\ttfamily int allocate\+Data\+Block (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structfile__system}{file\+\_\+system}} $\ast$}]{fs }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{fs_8h_af1a830ec80b41eb8a928ea35ae674e7a}\label{fs_8h_af1a830ec80b41eb8a928ea35ae674e7a}} 
+\index{fs.h@{fs.h}!allocateInode@{allocateInode}}
+\index{allocateInode@{allocateInode}!fs.h@{fs.h}}
+\doxysubsubsection{\texorpdfstring{allocateInode()}{allocateInode()}}
+{\footnotesize\ttfamily int allocate\+Inode (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structfile__system}{file\+\_\+system}} $\ast$}]{fs }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{fs_8h_a9e3149667f6c0b90f124a0eb6fd47914}\label{fs_8h_a9e3149667f6c0b90f124a0eb6fd47914}} 
+\index{fs.h@{fs.h}!createFile@{createFile}}
+\index{createFile@{createFile}!fs.h@{fs.h}}
+\doxysubsubsection{\texorpdfstring{createFile()}{createFile()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{structnode}{node}}$\ast$ create\+File (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structfile__system}{file\+\_\+system}} $\ast$}]{fs,  }\item[{\mbox{\hyperlink{structnode}{node}} $\ast$}]{parent,  }\item[{const char $\ast$}]{name,  }\item[{\mbox{\hyperlink{metadata_8h_aaf047b6ce458f7c55fd215920656d128}{file\+\_\+type}}}]{node\+\_\+type }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{fs_8h_a85404001377ed164ef77c6c38d13152b}\label{fs_8h_a85404001377ed164ef77c6c38d13152b}} 
+\index{fs.h@{fs.h}!deleteFile@{deleteFile}}
+\index{deleteFile@{deleteFile}!fs.h@{fs.h}}
+\doxysubsubsection{\texorpdfstring{deleteFile()}{deleteFile()}}
+{\footnotesize\ttfamily void delete\+File (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structfile__system}{file\+\_\+system}} $\ast$}]{fs,  }\item[{\mbox{\hyperlink{structnode}{node}} $\ast$}]{target }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{fs_8h_a16625e7b04fc7239f1f297b691860cc3}\label{fs_8h_a16625e7b04fc7239f1f297b691860cc3}} 
+\index{fs.h@{fs.h}!freeFileSystem@{freeFileSystem}}
+\index{freeFileSystem@{freeFileSystem}!fs.h@{fs.h}}
+\doxysubsubsection{\texorpdfstring{freeFileSystem()}{freeFileSystem()}}
+{\footnotesize\ttfamily void free\+File\+System (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structfile__system}{file\+\_\+system}} $\ast$}]{fs }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{fs_8h_ab8d0e7c4b3101795cd15db9effef0fdd}\label{fs_8h_ab8d0e7c4b3101795cd15db9effef0fdd}} 
+\index{fs.h@{fs.h}!initFileSystem@{initFileSystem}}
+\index{initFileSystem@{initFileSystem}!fs.h@{fs.h}}
+\doxysubsubsection{\texorpdfstring{initFileSystem()}{initFileSystem()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{structfile__system}{file\+\_\+system}}$\ast$ init\+File\+System (\begin{DoxyParamCaption}\item[{int}]{mode,  }\item[{long long}]{partition\+\_\+size }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{fs_8h_a492af308e2e3011a38c6cb2ce2d516b5}\label{fs_8h_a492af308e2e3011a38c6cb2ce2d516b5}} 
+\index{fs.h@{fs.h}!reclaimInode@{reclaimInode}}
+\index{reclaimInode@{reclaimInode}!fs.h@{fs.h}}
+\doxysubsubsection{\texorpdfstring{reclaimInode()}{reclaimInode()}}
+{\footnotesize\ttfamily void reclaim\+Inode (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structfile__system}{file\+\_\+system}} $\ast$}]{fs,  }\item[{int}]{inum }\end{DoxyParamCaption})}
+

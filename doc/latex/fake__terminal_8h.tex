@@ -1,0 +1,91 @@
+\hypertarget{fake__terminal_8h}{}\doxysection{include/fake\+\_\+terminal.h File Reference}
+\label{fake__terminal_8h}\index{include/fake\_terminal.h@{include/fake\_terminal.h}}
+This graph shows which files directly or indirectly include this file\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=294pt]{fake__terminal_8h__dep__incl}
+\end{center}
+\end{figure}
+\doxysubsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \mbox{\hyperlink{fake__terminal_8h_a232e63ea59e42fb8ea54f86ef2b70c32}{MAX\+\_\+\+PREFIX\+\_\+\+LENGTH}}~1024
+\end{DoxyCompactItemize}
+\doxysubsection*{Typedefs}
+\begin{DoxyCompactItemize}
+\item 
+typedef struct \mbox{\hyperlink{structfile__system}{file\+\_\+system}} \mbox{\hyperlink{fake__terminal_8h_a56389010ee2dc9e6a4b4507463ee4604}{file\+\_\+system}}
+\end{DoxyCompactItemize}
+\doxysubsection*{Enumerations}
+\begin{DoxyCompactItemize}
+\item 
+enum \mbox{\hyperlink{fake__terminal_8h_a2d967eed409413b06a8450ff977ab52a}{exit\+\_\+code\+\_\+t}} \{ \mbox{\hyperlink{fake__terminal_8h_a2d967eed409413b06a8450ff977ab52aa5b1866bed4434dacce0b33fef800494f}{UI\+\_\+\+EXIT\+\_\+\+SUCCESS}} = 0
+, \mbox{\hyperlink{fake__terminal_8h_a2d967eed409413b06a8450ff977ab52aa5f65ea807afabf09c31eff9fbb1654aa}{UI\+\_\+\+EXIT\+\_\+\+FAILURE}} = 1
+, \mbox{\hyperlink{fake__terminal_8h_a2d967eed409413b06a8450ff977ab52aa4a8f1cf183e6e615f5ba1f9dea8d9be8}{UI\+\_\+\+EXIT\+\_\+\+PROCESS}} = 2
+ \}
+\end{DoxyCompactItemize}
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{fake__terminal_8h_a2d967eed409413b06a8450ff977ab52a}{exit\+\_\+code\+\_\+t}} \mbox{\hyperlink{fake__terminal_8h_afdcf86616dad951b6fa3040f9e3f4c94}{fake\+\_\+terminal}} (const char $\ast$command, \mbox{\hyperlink{structfile__system}{file\+\_\+system}} $\ast$fs)
+\item 
+void \mbox{\hyperlink{fake__terminal_8h_af746c0b8f2d45e043f8e8ec3ce596800}{show\+\_\+prefix}} (\mbox{\hyperlink{structfile__system}{file\+\_\+system}} $\ast$fs)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Macro Definition Documentation}
+\mbox{\Hypertarget{fake__terminal_8h_a232e63ea59e42fb8ea54f86ef2b70c32}\label{fake__terminal_8h_a232e63ea59e42fb8ea54f86ef2b70c32}} 
+\index{fake\_terminal.h@{fake\_terminal.h}!MAX\_PREFIX\_LENGTH@{MAX\_PREFIX\_LENGTH}}
+\index{MAX\_PREFIX\_LENGTH@{MAX\_PREFIX\_LENGTH}!fake\_terminal.h@{fake\_terminal.h}}
+\doxysubsubsection{\texorpdfstring{MAX\_PREFIX\_LENGTH}{MAX\_PREFIX\_LENGTH}}
+{\footnotesize\ttfamily \#define MAX\+\_\+\+PREFIX\+\_\+\+LENGTH~1024}
+
+
+
+\doxysubsection{Typedef Documentation}
+\mbox{\Hypertarget{fake__terminal_8h_a56389010ee2dc9e6a4b4507463ee4604}\label{fake__terminal_8h_a56389010ee2dc9e6a4b4507463ee4604}} 
+\index{fake\_terminal.h@{fake\_terminal.h}!file\_system@{file\_system}}
+\index{file\_system@{file\_system}!fake\_terminal.h@{fake\_terminal.h}}
+\doxysubsubsection{\texorpdfstring{file\_system}{file\_system}}
+{\footnotesize\ttfamily typedef struct \mbox{\hyperlink{structfile__system}{file\+\_\+system}} \mbox{\hyperlink{structfile__system}{file\+\_\+system}}}
+
+
+
+\doxysubsection{Enumeration Type Documentation}
+\mbox{\Hypertarget{fake__terminal_8h_a2d967eed409413b06a8450ff977ab52a}\label{fake__terminal_8h_a2d967eed409413b06a8450ff977ab52a}} 
+\index{fake\_terminal.h@{fake\_terminal.h}!exit\_code\_t@{exit\_code\_t}}
+\index{exit\_code\_t@{exit\_code\_t}!fake\_terminal.h@{fake\_terminal.h}}
+\doxysubsubsection{\texorpdfstring{exit\_code\_t}{exit\_code\_t}}
+{\footnotesize\ttfamily enum \mbox{\hyperlink{fake__terminal_8h_a2d967eed409413b06a8450ff977ab52a}{exit\+\_\+code\+\_\+t}}}
+
+\begin{DoxyEnumFields}{Enumerator}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{UI\_EXIT\_SUCCESS@{UI\_EXIT\_SUCCESS}!fake\_terminal.h@{fake\_terminal.h}}\index{fake\_terminal.h@{fake\_terminal.h}!UI\_EXIT\_SUCCESS@{UI\_EXIT\_SUCCESS}}}\mbox{\Hypertarget{fake__terminal_8h_a2d967eed409413b06a8450ff977ab52aa5b1866bed4434dacce0b33fef800494f}\label{fake__terminal_8h_a2d967eed409413b06a8450ff977ab52aa5b1866bed4434dacce0b33fef800494f}} 
+UI\+\_\+\+EXIT\+\_\+\+SUCCESS&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{UI\_EXIT\_FAILURE@{UI\_EXIT\_FAILURE}!fake\_terminal.h@{fake\_terminal.h}}\index{fake\_terminal.h@{fake\_terminal.h}!UI\_EXIT\_FAILURE@{UI\_EXIT\_FAILURE}}}\mbox{\Hypertarget{fake__terminal_8h_a2d967eed409413b06a8450ff977ab52aa5f65ea807afabf09c31eff9fbb1654aa}\label{fake__terminal_8h_a2d967eed409413b06a8450ff977ab52aa5f65ea807afabf09c31eff9fbb1654aa}} 
+UI\+\_\+\+EXIT\+\_\+\+FAILURE&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{UI\_EXIT\_PROCESS@{UI\_EXIT\_PROCESS}!fake\_terminal.h@{fake\_terminal.h}}\index{fake\_terminal.h@{fake\_terminal.h}!UI\_EXIT\_PROCESS@{UI\_EXIT\_PROCESS}}}\mbox{\Hypertarget{fake__terminal_8h_a2d967eed409413b06a8450ff977ab52aa4a8f1cf183e6e615f5ba1f9dea8d9be8}\label{fake__terminal_8h_a2d967eed409413b06a8450ff977ab52aa4a8f1cf183e6e615f5ba1f9dea8d9be8}} 
+UI\+\_\+\+EXIT\+\_\+\+PROCESS&\\
+\hline
+
+\end{DoxyEnumFields}
+
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{fake__terminal_8h_afdcf86616dad951b6fa3040f9e3f4c94}\label{fake__terminal_8h_afdcf86616dad951b6fa3040f9e3f4c94}} 
+\index{fake\_terminal.h@{fake\_terminal.h}!fake\_terminal@{fake\_terminal}}
+\index{fake\_terminal@{fake\_terminal}!fake\_terminal.h@{fake\_terminal.h}}
+\doxysubsubsection{\texorpdfstring{fake\_terminal()}{fake\_terminal()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{fake__terminal_8h_a2d967eed409413b06a8450ff977ab52a}{exit\+\_\+code\+\_\+t}} fake\+\_\+terminal (\begin{DoxyParamCaption}\item[{const char $\ast$}]{command,  }\item[{\mbox{\hyperlink{structfile__system}{file\+\_\+system}} $\ast$}]{fs }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{fake__terminal_8h_af746c0b8f2d45e043f8e8ec3ce596800}\label{fake__terminal_8h_af746c0b8f2d45e043f8e8ec3ce596800}} 
+\index{fake\_terminal.h@{fake\_terminal.h}!show\_prefix@{show\_prefix}}
+\index{show\_prefix@{show\_prefix}!fake\_terminal.h@{fake\_terminal.h}}
+\doxysubsubsection{\texorpdfstring{show\_prefix()}{show\_prefix()}}
+{\footnotesize\ttfamily void show\+\_\+prefix (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structfile__system}{file\+\_\+system}} $\ast$}]{fs }\end{DoxyParamCaption})}
+

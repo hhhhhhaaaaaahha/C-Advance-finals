@@ -3,7 +3,7 @@
 #include "node.h"
 #include "fs.h"
 #include "ls.h"
-#include "util.h"
+#include "fs_utils.h"
 #include <string>
 
 TEST(RmdirSuite, WeirdFileDeleteProblem){

@@ -1,0 +1,134 @@
+\hypertarget{metadata_8h}{}\doxysection{include/metadata.h File Reference}
+\label{metadata_8h}\index{include/metadata.h@{include/metadata.h}}
+{\ttfamily \#include $<$stdio.\+h$>$}\newline
+Include dependency graph for metadata.\+h\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=191pt]{metadata_8h__incl}
+\end{center}
+\end{figure}
+This graph shows which files directly or indirectly include this file\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{metadata_8h__dep__incl}
+\end{center}
+\end{figure}
+\doxysubsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+struct \mbox{\hyperlink{structint__node}{int\+\_\+node}}
+\item 
+struct \mbox{\hyperlink{structmetadata}{metadata}}
+\end{DoxyCompactItemize}
+\doxysubsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \mbox{\hyperlink{metadata_8h_a44bf263b87e9495b645608e0a3b40578}{NUM\+\_\+\+TOTAL\+\_\+\+INODES}}~500
+\item 
+\#define \mbox{\hyperlink{metadata_8h_a3ac3dad203af2390b118f153996ed263}{FAKE\+\_\+\+DIR\+\_\+\+SIZE}}~2048
+\end{DoxyCompactItemize}
+\doxysubsection*{Typedefs}
+\begin{DoxyCompactItemize}
+\item 
+typedef struct \mbox{\hyperlink{structfile__system}{file\+\_\+system}} \mbox{\hyperlink{metadata_8h_a56389010ee2dc9e6a4b4507463ee4604}{file\+\_\+system}}
+\item 
+typedef struct \mbox{\hyperlink{structnode}{node}} \mbox{\hyperlink{metadata_8h_af4aeda155dbe167f1c1cf38cb65bf324}{node}}
+\item 
+typedef enum \mbox{\hyperlink{metadata_8h_aaf047b6ce458f7c55fd215920656d128}{file\+\_\+type}} \mbox{\hyperlink{metadata_8h_a6dfb95e9c3e64bb3d993ebae47edf73c}{file\+\_\+type}}
+\item 
+typedef struct \mbox{\hyperlink{structint__node}{int\+\_\+node}} \mbox{\hyperlink{metadata_8h_a8df85bc94638ec99a12e6c956c05ef07}{int\+\_\+node}}
+\item 
+typedef struct \mbox{\hyperlink{structmetadata}{metadata}} \mbox{\hyperlink{metadata_8h_a02cdca45b038146ade173c035b9a5ca6}{metadata}}
+\end{DoxyCompactItemize}
+\doxysubsection*{Enumerations}
+\begin{DoxyCompactItemize}
+\item 
+enum \mbox{\hyperlink{metadata_8h_aaf047b6ce458f7c55fd215920656d128}{file\+\_\+type}} \{ \mbox{\hyperlink{metadata_8h_aaf047b6ce458f7c55fd215920656d128a30351c278162a6e7dbdb10570ae8782e}{TYPE\+\_\+\+FILE}}
+, \mbox{\hyperlink{metadata_8h_aaf047b6ce458f7c55fd215920656d128a5b5f3036729530d8011e6f1ea2207aac}{TYPE\+\_\+\+DIR}}
+ \}
+\end{DoxyCompactItemize}
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{metadata_8h_ae6bfbba4e29c8b1564000f901c01d8ac}{init\+Metadata}} (\mbox{\hyperlink{structfile__system}{file\+\_\+system}} $\ast$fs, \mbox{\hyperlink{structnode}{node}} $\ast$new\+\_\+node, \mbox{\hyperlink{metadata_8h_aaf047b6ce458f7c55fd215920656d128}{file\+\_\+type}} node\+\_\+type)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Macro Definition Documentation}
+\mbox{\Hypertarget{metadata_8h_a3ac3dad203af2390b118f153996ed263}\label{metadata_8h_a3ac3dad203af2390b118f153996ed263}} 
+\index{metadata.h@{metadata.h}!FAKE\_DIR\_SIZE@{FAKE\_DIR\_SIZE}}
+\index{FAKE\_DIR\_SIZE@{FAKE\_DIR\_SIZE}!metadata.h@{metadata.h}}
+\doxysubsubsection{\texorpdfstring{FAKE\_DIR\_SIZE}{FAKE\_DIR\_SIZE}}
+{\footnotesize\ttfamily \#define FAKE\+\_\+\+DIR\+\_\+\+SIZE~2048}
+
+\mbox{\Hypertarget{metadata_8h_a44bf263b87e9495b645608e0a3b40578}\label{metadata_8h_a44bf263b87e9495b645608e0a3b40578}} 
+\index{metadata.h@{metadata.h}!NUM\_TOTAL\_INODES@{NUM\_TOTAL\_INODES}}
+\index{NUM\_TOTAL\_INODES@{NUM\_TOTAL\_INODES}!metadata.h@{metadata.h}}
+\doxysubsubsection{\texorpdfstring{NUM\_TOTAL\_INODES}{NUM\_TOTAL\_INODES}}
+{\footnotesize\ttfamily \#define NUM\+\_\+\+TOTAL\+\_\+\+INODES~500}
+
+
+
+\doxysubsection{Typedef Documentation}
+\mbox{\Hypertarget{metadata_8h_a56389010ee2dc9e6a4b4507463ee4604}\label{metadata_8h_a56389010ee2dc9e6a4b4507463ee4604}} 
+\index{metadata.h@{metadata.h}!file\_system@{file\_system}}
+\index{file\_system@{file\_system}!metadata.h@{metadata.h}}
+\doxysubsubsection{\texorpdfstring{file\_system}{file\_system}}
+{\footnotesize\ttfamily typedef struct \mbox{\hyperlink{structfile__system}{file\+\_\+system}} \mbox{\hyperlink{structfile__system}{file\+\_\+system}}}
+
+\mbox{\Hypertarget{metadata_8h_a6dfb95e9c3e64bb3d993ebae47edf73c}\label{metadata_8h_a6dfb95e9c3e64bb3d993ebae47edf73c}} 
+\index{metadata.h@{metadata.h}!file\_type@{file\_type}}
+\index{file\_type@{file\_type}!metadata.h@{metadata.h}}
+\doxysubsubsection{\texorpdfstring{file\_type}{file\_type}}
+{\footnotesize\ttfamily typedef enum \mbox{\hyperlink{metadata_8h_aaf047b6ce458f7c55fd215920656d128}{file\+\_\+type}} \mbox{\hyperlink{metadata_8h_aaf047b6ce458f7c55fd215920656d128}{file\+\_\+type}}}
+
+\mbox{\Hypertarget{metadata_8h_a8df85bc94638ec99a12e6c956c05ef07}\label{metadata_8h_a8df85bc94638ec99a12e6c956c05ef07}} 
+\index{metadata.h@{metadata.h}!int\_node@{int\_node}}
+\index{int\_node@{int\_node}!metadata.h@{metadata.h}}
+\doxysubsubsection{\texorpdfstring{int\_node}{int\_node}}
+{\footnotesize\ttfamily typedef struct \mbox{\hyperlink{structint__node}{int\+\_\+node}} \mbox{\hyperlink{structint__node}{int\+\_\+node}}}
+
+\mbox{\Hypertarget{metadata_8h_a02cdca45b038146ade173c035b9a5ca6}\label{metadata_8h_a02cdca45b038146ade173c035b9a5ca6}} 
+\index{metadata.h@{metadata.h}!metadata@{metadata}}
+\index{metadata@{metadata}!metadata.h@{metadata.h}}
+\doxysubsubsection{\texorpdfstring{metadata}{metadata}}
+{\footnotesize\ttfamily typedef struct \mbox{\hyperlink{structmetadata}{metadata}} \mbox{\hyperlink{structmetadata}{metadata}}}
+
+\mbox{\Hypertarget{metadata_8h_af4aeda155dbe167f1c1cf38cb65bf324}\label{metadata_8h_af4aeda155dbe167f1c1cf38cb65bf324}} 
+\index{metadata.h@{metadata.h}!node@{node}}
+\index{node@{node}!metadata.h@{metadata.h}}
+\doxysubsubsection{\texorpdfstring{node}{node}}
+{\footnotesize\ttfamily typedef struct \mbox{\hyperlink{structnode}{node}} \mbox{\hyperlink{structnode}{node}}}
+
+
+
+\doxysubsection{Enumeration Type Documentation}
+\mbox{\Hypertarget{metadata_8h_aaf047b6ce458f7c55fd215920656d128}\label{metadata_8h_aaf047b6ce458f7c55fd215920656d128}} 
+\index{metadata.h@{metadata.h}!file\_type@{file\_type}}
+\index{file\_type@{file\_type}!metadata.h@{metadata.h}}
+\doxysubsubsection{\texorpdfstring{file\_type}{file\_type}}
+{\footnotesize\ttfamily enum \mbox{\hyperlink{metadata_8h_aaf047b6ce458f7c55fd215920656d128}{file\+\_\+type}}}
+
+\begin{DoxyEnumFields}{Enumerator}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{TYPE\_FILE@{TYPE\_FILE}!metadata.h@{metadata.h}}\index{metadata.h@{metadata.h}!TYPE\_FILE@{TYPE\_FILE}}}\mbox{\Hypertarget{metadata_8h_aaf047b6ce458f7c55fd215920656d128a30351c278162a6e7dbdb10570ae8782e}\label{metadata_8h_aaf047b6ce458f7c55fd215920656d128a30351c278162a6e7dbdb10570ae8782e}} 
+TYPE\+\_\+\+FILE&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{TYPE\_DIR@{TYPE\_DIR}!metadata.h@{metadata.h}}\index{metadata.h@{metadata.h}!TYPE\_DIR@{TYPE\_DIR}}}\mbox{\Hypertarget{metadata_8h_aaf047b6ce458f7c55fd215920656d128a5b5f3036729530d8011e6f1ea2207aac}\label{metadata_8h_aaf047b6ce458f7c55fd215920656d128a5b5f3036729530d8011e6f1ea2207aac}} 
+TYPE\+\_\+\+DIR&\\
+\hline
+
+\end{DoxyEnumFields}
+
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{metadata_8h_ae6bfbba4e29c8b1564000f901c01d8ac}\label{metadata_8h_ae6bfbba4e29c8b1564000f901c01d8ac}} 
+\index{metadata.h@{metadata.h}!initMetadata@{initMetadata}}
+\index{initMetadata@{initMetadata}!metadata.h@{metadata.h}}
+\doxysubsubsection{\texorpdfstring{initMetadata()}{initMetadata()}}
+{\footnotesize\ttfamily void init\+Metadata (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structfile__system}{file\+\_\+system}} $\ast$}]{fs,  }\item[{\mbox{\hyperlink{structnode}{node}} $\ast$}]{new\+\_\+node,  }\item[{\mbox{\hyperlink{metadata_8h_aaf047b6ce458f7c55fd215920656d128}{file\+\_\+type}}}]{node\+\_\+type }\end{DoxyParamCaption})}
+

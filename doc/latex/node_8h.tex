@@ -1,0 +1,91 @@
+\hypertarget{node_8h}{}\doxysection{include/node.h File Reference}
+\label{node_8h}\index{include/node.h@{include/node.h}}
+{\ttfamily \#include \char`\"{}metadata.\+h\char`\"{}}\newline
+{\ttfamily \#include $<$stdio.\+h$>$}\newline
+Include dependency graph for node.\+h\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=193pt]{node_8h__incl}
+\end{center}
+\end{figure}
+This graph shows which files directly or indirectly include this file\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{node_8h__dep__incl}
+\end{center}
+\end{figure}
+\doxysubsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+struct \mbox{\hyperlink{structnode}{node}}
+\end{DoxyCompactItemize}
+\doxysubsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \mbox{\hyperlink{node_8h_a47f2e62c0dbebc787052c165afcada0e}{NAME}}~50
+\end{DoxyCompactItemize}
+\doxysubsection*{Typedefs}
+\begin{DoxyCompactItemize}
+\item 
+typedef struct \mbox{\hyperlink{structmetadata}{metadata}} \mbox{\hyperlink{node_8h_a02cdca45b038146ade173c035b9a5ca6}{metadata}}
+\item 
+typedef struct \mbox{\hyperlink{structfile__system}{file\+\_\+system}} \mbox{\hyperlink{node_8h_a56389010ee2dc9e6a4b4507463ee4604}{file\+\_\+system}}
+\item 
+typedef enum \mbox{\hyperlink{metadata_8h_aaf047b6ce458f7c55fd215920656d128}{file\+\_\+type}} \mbox{\hyperlink{node_8h_a6dfb95e9c3e64bb3d993ebae47edf73c}{file\+\_\+type}}
+\item 
+typedef struct \mbox{\hyperlink{structnode}{node}} \mbox{\hyperlink{node_8h_af4aeda155dbe167f1c1cf38cb65bf324}{node}}
+\end{DoxyCompactItemize}
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{structnode}{node}} $\ast$ \mbox{\hyperlink{node_8h_a3407d6a6cc1ce9cc45134f5365526913}{init\+Node}} (\mbox{\hyperlink{structfile__system}{file\+\_\+system}} $\ast$fs, \mbox{\hyperlink{structnode}{node}} $\ast$parent, const char $\ast$name, \mbox{\hyperlink{metadata_8h_aaf047b6ce458f7c55fd215920656d128}{file\+\_\+type}} node\+\_\+type)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Macro Definition Documentation}
+\mbox{\Hypertarget{node_8h_a47f2e62c0dbebc787052c165afcada0e}\label{node_8h_a47f2e62c0dbebc787052c165afcada0e}} 
+\index{node.h@{node.h}!NAME@{NAME}}
+\index{NAME@{NAME}!node.h@{node.h}}
+\doxysubsubsection{\texorpdfstring{NAME}{NAME}}
+{\footnotesize\ttfamily \#define NAME~50}
+
+
+
+\doxysubsection{Typedef Documentation}
+\mbox{\Hypertarget{node_8h_a56389010ee2dc9e6a4b4507463ee4604}\label{node_8h_a56389010ee2dc9e6a4b4507463ee4604}} 
+\index{node.h@{node.h}!file\_system@{file\_system}}
+\index{file\_system@{file\_system}!node.h@{node.h}}
+\doxysubsubsection{\texorpdfstring{file\_system}{file\_system}}
+{\footnotesize\ttfamily typedef struct \mbox{\hyperlink{structfile__system}{file\+\_\+system}} \mbox{\hyperlink{structfile__system}{file\+\_\+system}}}
+
+\mbox{\Hypertarget{node_8h_a6dfb95e9c3e64bb3d993ebae47edf73c}\label{node_8h_a6dfb95e9c3e64bb3d993ebae47edf73c}} 
+\index{node.h@{node.h}!file\_type@{file\_type}}
+\index{file\_type@{file\_type}!node.h@{node.h}}
+\doxysubsubsection{\texorpdfstring{file\_type}{file\_type}}
+{\footnotesize\ttfamily typedef enum \mbox{\hyperlink{metadata_8h_aaf047b6ce458f7c55fd215920656d128}{file\+\_\+type}} \mbox{\hyperlink{metadata_8h_aaf047b6ce458f7c55fd215920656d128}{file\+\_\+type}}}
+
+\mbox{\Hypertarget{node_8h_a02cdca45b038146ade173c035b9a5ca6}\label{node_8h_a02cdca45b038146ade173c035b9a5ca6}} 
+\index{node.h@{node.h}!metadata@{metadata}}
+\index{metadata@{metadata}!node.h@{node.h}}
+\doxysubsubsection{\texorpdfstring{metadata}{metadata}}
+{\footnotesize\ttfamily typedef struct \mbox{\hyperlink{structmetadata}{metadata}} \mbox{\hyperlink{structmetadata}{metadata}}}
+
+\mbox{\Hypertarget{node_8h_af4aeda155dbe167f1c1cf38cb65bf324}\label{node_8h_af4aeda155dbe167f1c1cf38cb65bf324}} 
+\index{node.h@{node.h}!node@{node}}
+\index{node@{node}!node.h@{node.h}}
+\doxysubsubsection{\texorpdfstring{node}{node}}
+{\footnotesize\ttfamily typedef struct \mbox{\hyperlink{structnode}{node}} \mbox{\hyperlink{structnode}{node}}}
+
+
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{node_8h_a3407d6a6cc1ce9cc45134f5365526913}\label{node_8h_a3407d6a6cc1ce9cc45134f5365526913}} 
+\index{node.h@{node.h}!initNode@{initNode}}
+\index{initNode@{initNode}!node.h@{node.h}}
+\doxysubsubsection{\texorpdfstring{initNode()}{initNode()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{structnode}{node}}$\ast$ init\+Node (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structfile__system}{file\+\_\+system}} $\ast$}]{fs,  }\item[{\mbox{\hyperlink{structnode}{node}} $\ast$}]{parent,  }\item[{const char $\ast$}]{name,  }\item[{\mbox{\hyperlink{metadata_8h_aaf047b6ce458f7c55fd215920656d128}{file\+\_\+type}}}]{node\+\_\+type }\end{DoxyParamCaption})}
+
