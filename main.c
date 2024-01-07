@@ -1,5 +1,6 @@
 #include "include/metadata.h"
 #include "include/fs.h"
+#include "restore.h"
 
 #include <stdlib.h>
 #include <stdio.h>
@@ -19,7 +20,15 @@ int main()
             printf("Option error!\n\n");
         }
     }
-    if (mode == 2)
+
+    if (mode == 1)
+    {
+        char dump_name[50];
+        printf("Please enter dump file name: ");
+        scanf("%s", dump_name);
+        file_system *fs = restore(dump_name);
+    }
+    else if (mode == 2)
     {
         long long partition_size;
         printf("Input size of a new partition (e.g. 102400): ");
