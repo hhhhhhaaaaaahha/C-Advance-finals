@@ -1,9 +1,0 @@
-{
-	"partition_size": 1024000,
-	"root": {
-		"name": "/",
-		"type": "dir",
-		"parent": null,
-		"children": []
-	}
-}
