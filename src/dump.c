@@ -202,13 +202,13 @@ int dump_simple(file_system *fs, const char *file_name)
     strcpy(dump_file_name, file_name);
     strcat(dump_file_name, ".dump");
     // check if the file exists
-    if (access(dump_file_name, F_OK) != -1)
-    {
-        // file exists
-        printf("Error: file %s already exists\n", dump_file_name);
-        free(dump_file_name);
-        return -1;
-    }
+    // if (access(dump_file_name, F_OK) != -1)
+    // {
+    //     // file exists
+    //     printf("Error: file %s already exists\n", dump_file_name);
+    //     free(dump_file_name);
+    //     return -1;
+    // }
     FILE *dump_file = fopen(dump_file_name, "w");
     free(dump_file_name);
     // write file system info in json format

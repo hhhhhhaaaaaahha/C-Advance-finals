@@ -53,7 +53,7 @@ int open_file(const char *path, node *inode)
     {
         return -1;
     }
-    // write fiile pointer
+    // write file pointer
     // record the size of the file (byte)
     fseek(file, 0L, SEEK_END);
     size = ftell(file);
@@ -62,7 +62,8 @@ int open_file(const char *path, node *inode)
     return size;
 }
 
-int check_node_size(const char * path){
+int check_node_size(const char *path)
+{
     struct stat statbuf = {0};
     stat(path, &statbuf);
     if (S_ISDIR(statbuf.st_mode))
@@ -77,7 +78,6 @@ int check_node_size(const char * path){
     {
         return -1; // not a file or directory
     }
-
 }
 
 node *put_file(file_system *fs, const char *path)
@@ -86,8 +86,21 @@ node *put_file(file_system *fs, const char *path)
     node *inode = NULL;
     const char *name = strrchr(path, '/');
     if (name == NULL)
-        return NULL; // wrong name
-    name ++;
+    {
+        inode = createFile(fs, fs->current_directory, path, TYPE_FILE);
+        // open the file pointer
+        int ret = open_file(path, inode);
+        if (ret == -1)
+        {
+            printf("open file error\n");
+            return NULL;
+        }
+        // init the size
+        inode->file_info->file_size = check_node_size(path);
+        return inode;
+        // return NULL; // wrong name
+    }
+    name++;
     inode = createFile(fs, fs->current_directory, name, TYPE_FILE);
     // open the file pointer
     int ret = open_file(path, inode);
@@ -100,8 +113,6 @@ node *put_file(file_system *fs, const char *path)
     inode->file_info->file_size = check_node_size(path);
     return inode;
 }
-
-
 
 int read_file_buffer(Temp_Inode *inode, FILE *file, int size)
 {

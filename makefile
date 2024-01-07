@@ -14,7 +14,7 @@ all: clean fs
 
 test_all: clean test run_test
 	
-run: fs
+run:
 	./bin/main
 
 fs: main.c dir $(OBJ)
