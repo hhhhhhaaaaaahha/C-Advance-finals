@@ -21,11 +21,13 @@ typedef struct node
     node *left_most_child;
     node *sibling;
 
-    FILE *fp; // remember to close this
+    // FILE *fp; // remember to close this
+    const char * external_path;
 
     metadata *file_info;
 } node;
 
 node *initNode(file_system *fs, node *parent, const char *name, file_type node_type);
+
 
 #endif

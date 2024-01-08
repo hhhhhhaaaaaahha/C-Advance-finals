@@ -10,12 +10,12 @@ void initMetadata(file_system *fs, node *new_node, file_type node_type)
     info->node_type = node_type;
     if (node_type == TYPE_DIR)
     {
-        new_node->fp = NULL;
+        // new_node->fp = NULL;
         info->file_size = FAKE_DIR_SIZE;
     }
     else if (node_type == TYPE_FILE)
     {
-        new_node->fp = NULL;
+        // new_node->fp = NULL;
         info->file_size = FAKE_DIR_SIZE;
     }
     

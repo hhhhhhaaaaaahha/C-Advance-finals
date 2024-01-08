@@ -63,7 +63,7 @@ void deleteFile(file_system *fs, node *target)
         }
         it->sibling = target->sibling;
     }
-
+    free(target->external_path);
     free(target->file_info);
     free(target);
 }

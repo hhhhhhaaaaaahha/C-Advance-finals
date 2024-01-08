@@ -58,7 +58,8 @@ int open_file(const char *path, node *inode)
     fseek(file, 0L, SEEK_END);
     size = ftell(file);
     fseek(file, 0L, SEEK_SET);
-    inode->fp = file; // link the file pointer to the inode
+    // inode->fp = file; // link the file pointer to the inode
+    inode->external_path = path;
     return size;
 }
 

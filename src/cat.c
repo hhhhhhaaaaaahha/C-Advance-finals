@@ -18,7 +18,7 @@ void find_and_print(file_system *fs, const char *filename) {
         return;
     }
 
-    FILE *fp = file->fp; // point to the real file
+    FILE *fp = fopen(file->external_path, "r"); // point to the real file
     if (fp == NULL) {
         printf("Error opening file.\n");
         return;

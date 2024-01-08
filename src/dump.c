@@ -142,6 +142,9 @@ int record_children_in_dump_simple(file_system *fs, node *parent, FILE *dump_fil
         fprintf(dump_file, "%s\t\"type\": \"%s\",\n", prefix, it->file_info->node_type == TYPE_DIR ? "dir" : "file");
         // record child node parent
         fprintf(dump_file, "%s\t\"parent\": \"%s\",\n", prefix, parent->name);
+
+        // record child node external path
+        fprintf(dump_file, "%s\t\"external_path\": \"%s\",\n", prefix, it->external_path);
         // earily return if the child node has no children
         if (it->left_most_child == NULL)
         {
@@ -201,14 +204,7 @@ int dump_simple(file_system *fs, const char *file_name)
     char *dump_file_name = (char *)malloc(sizeof(char) * (strlen(file_name) + 5));
     strcpy(dump_file_name, file_name);
     strcat(dump_file_name, ".dump");
-    // check if the file exists
-    // if (access(dump_file_name, F_OK) != -1)
-    // {
-    //     // file exists
-    //     printf("Error: file %s already exists\n", dump_file_name);
-    //     free(dump_file_name);
-    //     return -1;
-    // }
+
     FILE *dump_file = fopen(dump_file_name, "w");
     free(dump_file_name);
     // write file system info in json format

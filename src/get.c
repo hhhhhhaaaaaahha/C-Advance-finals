@@ -3,6 +3,9 @@
 #include "node.h"
 #include "rmdir.h"
 
+#include <stdio.h>
+#include <stdlib.h>
+
 int check_dump_folder()
 {
     struct stat st = {0};
@@ -27,7 +30,7 @@ int create_dump_folder()
 
 char * get_file_content(file_system *fs, node *file_node)
 {
-    FILE *file = file_node->fp;
+    FILE *file = fopen(file_node->external_path, "r");
     size_t file_size = file_node->file_info->file_size;
     char *file_content = (char *)malloc(file_size * sizeof(char));
     int i;

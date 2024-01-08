@@ -89,16 +89,20 @@ int construct_structure_simple(file_system * fs_r, FILE * dump_fp, node * root){
             char node_name[NAME];
             char node_type[NAME];
             char node_parent[NAME];
+            char node_external_path[NAME];
             while(fgetc(dump_fp) != ':');
             fscanf(dump_fp, "%s", node_name);
             while(fgetc(dump_fp) != ':');
             fscanf(dump_fp, "%s", node_type);
             while(fgetc(dump_fp) != ':');
             fscanf(dump_fp, "%s", node_parent);
+            while(fgetc(dump_fp) != ':');
+            fscanf(dump_fp, "%s", node_external_path);
             // strip the " at the beginning and end
             remove_head_and_tail(node_name);
             remove_head_and_tail(node_type);
             remove_head_and_tail(node_parent);
+            remove_head_and_tail(node_external_path);
             // find parent node
             node * parent_node = find_dir(fs_r, node_parent);
             if(parent_node == NULL){
@@ -108,6 +112,8 @@ int construct_structure_simple(file_system * fs_r, FILE * dump_fp, node * root){
 
             // construct node
             node * new_node = initNode(fs_r, parent_node, node_name, strcmp(node_type, "dir") == 0 ? TYPE_DIR : TYPE_FILE);
+            new_node->external_path = (char *)malloc(sizeof(char) * (strlen(node_external_path) + 1));
+            strcpy(new_node->external_path, node_external_path);
         }
     }
     return 0;
