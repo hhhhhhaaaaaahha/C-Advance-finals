@@ -22,7 +22,7 @@ typedef struct node
     node *sibling;
 
     // FILE *fp; // remember to close this
-    const char * external_path;
+    char external_path[100];
 
     metadata *file_info;
 } node;

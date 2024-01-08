@@ -2,6 +2,7 @@
 #include "fs.h"
 #include "node.h"
 #include "rmdir.h"
+#include "fs_utils.h"
 
 #include <stdio.h>
 #include <stdlib.h>

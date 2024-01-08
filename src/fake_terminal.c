@@ -143,7 +143,9 @@ exit_code_t fake_terminal(const char *command, file_system *fs)
             printf("Usage: cat <filename>\n");
             return UI_EXIT_FAILURE;
         }
-        find_and_print(fs, command_split);
+        char * file_cp = (char *)malloc(sizeof(char) * (strlen(command_split) + 1));
+        strcpy(file_cp, command_split);
+        find_and_print(fs, file_cp);
         return UI_EXIT_SUCCESS;
     }
     else if (strcmp(command_split, "put") == 0)

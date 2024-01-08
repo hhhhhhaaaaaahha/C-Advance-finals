@@ -1,4 +1,5 @@
 #include "../include/cd.h"
+#include "fs_utils.h"
 
 char current[200] = "/ $ ";
 char *currentParent;

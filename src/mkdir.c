@@ -1,4 +1,5 @@
 #include "../include/mkdir.h"
+#include "fs_utils.h"
 
 int mk_dir(file_system *fs, const char *folder_name){
     node *new_folder;

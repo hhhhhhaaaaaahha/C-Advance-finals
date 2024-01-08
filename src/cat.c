@@ -12,7 +12,6 @@
 void find_and_print(file_system *fs, const char *filename) {
     // find out which node does the file locate at
     node *file = findFile(fs->current_directory, filename); 
-
     if (file == NULL || file->file_info->node_type != TYPE_FILE) {
         printf("File not found or is not a regular file.\n");
         return;
@@ -40,6 +39,7 @@ void find_and_print(file_system *fs, const char *filename) {
     // release and reset
     free(file_content);
     fseek(fp, 0, SEEK_SET);
+    fclose(fp);
 }
 
 

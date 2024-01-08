@@ -2,6 +2,7 @@
 #include "fs.h"
 #include "node.h"
 #include "status.h"
+#include "security.h"
 #include <string.h>
 #include <unistd.h>
 
@@ -206,9 +207,8 @@ int dump_simple(file_system *fs, const char *file_name)
     strcat(dump_file_name, ".dump");
 
     FILE *dump_file = fopen(dump_file_name, "w");
-    free(dump_file_name);
     // write file system info in json format
-    fprintf(dump_file, "{\n");
+    fprintf(dump_file, "How do you turn this on {\n");
     // partition size
     fprintf(dump_file, "\t\"partition_size\": %d,\n", fs->partition_size);
     // record the root structure
@@ -216,5 +216,10 @@ int dump_simple(file_system *fs, const char *file_name)
     // end the bracket
     fprintf(dump_file, "}\n");
     fclose(dump_file);
+    char * password;
+    printf("Enter password: ");
+    scanf("%s", password);
+    encodeFile(dump_file_name, password);
+    free(dump_file_name);
     return ret;
 }
