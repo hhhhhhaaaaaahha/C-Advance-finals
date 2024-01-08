@@ -36,7 +36,7 @@ int encodeWithPassword(char *str, char *buf, int len, char *password){
 
 int decodeWithPassword(char *str, char *buf, int len, char *password){
     int password_len = strlen(password);
-    for(int i = 0; i < len; i++){
+    for(int i = 0; i <= len; i++){
         buf[i] = str[i] ^ password[i % password_len];
     }
     return 0;
@@ -58,7 +58,6 @@ int encodeFile(char *filename, char *key)
     while ((c = fgetc(fp)) != EOF)
     {
         fseek(fp, -1, SEEK_CUR);
-        printf("char(after encode) is %c\n", c ^ key[counter % key_len]);
         fputc(c ^ key[counter % key_len], fp);
         counter ++ ;
     }

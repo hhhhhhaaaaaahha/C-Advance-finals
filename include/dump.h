@@ -1,5 +1,5 @@
 #pragma once
-#define MAGIC_STR "how do you turn this on"
+#define MAGIC_STR "How do you turn this on"
 #define MAGIC_STR_LEN (sizeof(MAGIC_STR) - 1)
 
 

@@ -141,6 +141,31 @@ int construct_structure_simple(file_system *fs_r, FILE *dump_fp, node *root)
     return 0;
 }
 
+int passwordCheck(const char * dump_filename, char * password){
+    FILE *dump_file = fopen(dump_filename, "r");
+    if (dump_file == NULL)
+    {
+        return -1;
+    }
+    // get first line of dump file
+    int ret = 0;
+    char c;
+    int counter = 0;
+    int len = strlen(password);
+    while (counter < MAGIC_STR_LEN)
+    {
+        c = fgetc(dump_file);
+        if ((int)(c ^ password[counter % len]) != (int)(MAGIC_STR[counter]))
+        {
+            ret = -1;
+            break;
+        }
+        counter++;
+    }
+    
+    return ret; // Wrong password
+}
+
 file_system *restore_simple(const char *dump_file_name)
 {
     //secuirity
@@ -148,8 +173,13 @@ file_system *restore_simple(const char *dump_file_name)
     printf("Please input password : ");
     scanf("%s", password);
     int ret = passwordCheck(dump_file_name, password);
-    
-    int ret = decodeFile(dump_file_name, password);
+    while(ret == -1){
+        printf("Wrong password!\n");
+        printf("Please input password : ");
+        scanf("%s", password);
+        ret = passwordCheck(dump_file_name, password);
+    }
+    ret = decodeFile(dump_file_name, password);
     
     if (ret == 0)
     {
