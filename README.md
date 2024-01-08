@@ -28,4 +28,4 @@
 - use command `make run_test` will compile the whole project and run the test program
 
 # Doxygen
-- We use Doxygen to automatically generate [document of project](https://hhhhhhaaaaaahha.github.io/C-Advance-finals/doc/html/index.html)
+- We use Doxygen to automatically generate [document of project](./doc/html/index.html)
