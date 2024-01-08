@@ -52,7 +52,6 @@ exit_code_t fake_terminal(const char *command, file_system *fs)
 
     strcpy(command_copy, command);
     command_copy[strlen(command_copy)-1] = '\0';
-        // printf("command = %s\n", command_copy);
     char *command_split = strtok(command_copy, " ");
     if(command_split == NULL){
         return UI_EXIT_SUCCESS;
@@ -143,14 +142,15 @@ exit_code_t fake_terminal(const char *command, file_system *fs)
             printf("Usage: cat <filename>\n");
             return UI_EXIT_FAILURE;
         }
-        find_and_print(fs, command_split);
+        char * file_cp = (char *)malloc(sizeof(char) * (strlen(command_split) + 1));
+        strcpy(file_cp, command_split);
+        find_and_print(fs, file_cp);
         return UI_EXIT_SUCCESS;
     }
     else if (strcmp(command_split, "put") == 0)
     {
         // put
         command_split = strtok(NULL, " ");
-        printf("DEBUG: path = %s\n", command_split);
         if (command_split == NULL)
         {
             printf("Usage: put <external file path>\n");
