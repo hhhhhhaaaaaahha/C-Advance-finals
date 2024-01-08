@@ -50,6 +50,7 @@ void deleteFile(file_system *fs, node *target)
         return;
     }
     reclaimInode(fs, target->inode);
+    reclaimDataBlock(fs, target->file_info->first_data_block);
 
     node *it = target->parent->left_most_child;
     if (it == target)
@@ -85,6 +86,7 @@ int allocateInode(file_system *fs)
 void reclaimInode(file_system *fs, int inum)
 {
     fs->inode_bitmap[inum] = 0;
+    fs->num_used_inodes--;
 }
 
 int allocateDataBlock(file_system *fs)
@@ -99,4 +101,14 @@ int allocateDataBlock(file_system *fs)
         }
     }
     return -1;
+}
+
+void reclaimDataBlock(file_system *fs, int_node *block)
+{
+    while (block != NULL)
+    {
+        fs->data_bitmap[block->data] = 0;
+        fs->num_used_blocks--;
+        block = block->next;
+    }
 }
